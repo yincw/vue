@@ -1,0 +1,22 @@
+# 架构设计
+
+- 关注点分离
+- 单向数据流
+- 逻辑复用
+  - 混入 mixin
+  - 高阶组件 HOC
+  - 装饰器
+  - Hooks
+  - 上下文 Contexts
+  - 依赖注入
+- 响应式
+- Fiber 架构和 Diff 算法 v16
+  - 任务调度
+- MAP
+  - https://umijs.org/docs/guides/mpa
+- SPA
+- 微前端
+  - Qiankun
+- PWA
+- 同构/SSR
+  - RSC 服务器端渲染

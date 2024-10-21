@@ -1,0 +1,74 @@
+# 界面开发
+
+- 开发
+  - 视图
+  - React
+    - 组件生命周期方法
+  - Vue
+    - https://umijs.org/docs/guides/use-vue
+  - 创建组件
+    - 渲染列表
+    - 条件渲染
+    - DOM 实例操作
+    - DOM 引用
+    - 状态管理
+    - 异常处理
+    - 生命周期
+    - 组件通信
+  - 事件处理
+  - 样式
+    - 主题化
+    - Less
+    - PostCSS
+    - CSS Modules
+    - styled-components
+    - Tailwind CSS
+  - TypeScript 支持
+    - TypeScript
+  - **路由**
+  - 创建页面
+    - React Router
+  - 路由类型
+    - history
+    - location - hash
+  - 路由配置
+  - 路由权限
+    - 路由守卫
+  - 路由跳转
+    - Link 组件
+  - 动态路由
+  - 路由传参
+    - 动态传参
+    - 查询字符串传参 query
+    - match
+    - location
+  - 路由数据加载
+  - 状态管理
+  - 数据流
+    - Redux
+    - dva
+    - valtio
+  - 网络请求及缓存
+    - 请求
+      - Axios
+      - react-query
+    - 计算机网络&协议
+    - 数据库/缓存
+      - 本地存储
+    - 网络请求：前后端交互场景分析、机制设计、架构规划
+    - 副作用
+    - 数据绑定
+      - Suspense
+  - 国际化
+    - React Intl
+  - 动画
+  - 工具集
+- 异常处理
+  - 类型检查
+- 测试集成
+  - Mock
+    - Mock.js
+  - 单元测试
+    - Jest
+  - 组件测试
+    - @testing-library/react

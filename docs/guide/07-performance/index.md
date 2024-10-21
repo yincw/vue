@@ -1,0 +1,44 @@
+# 性能优化
+
+- 0.12
+  - 支持面向对象的组件写法
+- 0.13
+  - 支持 ES6 类的组件写法
+  - 支持 Babel
+- 15
+  - 停止支持 IE8
+- 15.3
+  - React.PureComponent
+  - 高阶组件
+- 15.5
+  - 停止支持混入 mixin
+- 16
+  - Fiber 架构
+  - 支持 IE11+
+- 16.6
+  - 代码拆分/懒加载/代码分割-按需加载
+    - React.lazy()
+  - 状态缓存/组件缓存
+    - React.memo()
+- 16.8
+  - 支持 Hooks 写法
+- 16.9
+  - Profiler
+- 18
+  - 并发 React：Concurrent React
+    - 并发渲染器 Concurrent renderer
+    - 优先队列和多重缓冲技术
+    - 自动批处理
+  - 流式服务器端渲染
+  - 预渲染 KeepAlive/Offscreen
+  - 停止支持 IE
+- 18.3
+  - 编译器 React Compiler
+- CDN 技术
+- 缓存技术
+- 异常捕获
+  - API兼容性
+  - 内存泄漏
+- Webpack
+  - code-splitting 代码拆分-代码分割/按需加载
+  - Tree-Sharking 摇树
