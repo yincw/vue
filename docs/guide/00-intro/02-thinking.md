@@ -1,4 +1,29 @@
 # 哲学
 
 - 思想
+  - 关注点分离
+    - SFC
+    - JSX
+    - https://v2.cn.vuejs.org/v2/guide/single-file-components.html#%E6%80%8E%E4%B9%88%E7%9C%8B%E5%BE%85%E5%85%B3%E6%B3%A8%E7%82%B9%E5%88%86%E7%A6%BB%EF%BC%9F
+    - https://v2.cn.vuejs.org/v2/guide/events.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8-HTML-%E4%B8%AD%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6%EF%BC%9F
 - 心智模型
+  - 声明式
+  - 渐进式
+  - 组件化
+    - 生命周期钩子函数
+    - 模板
+    - 指令
+    - 插槽
+  - 响应式
+    - 属性
+    - 状态
+    - 侦听（监视）
+  - 逻辑复用
+    - 混入
+    - 依赖注入
+    - 上下文
+    - 扩展
+  - 编程范式
+    - 函数式编程（MVVM）
+    - 面向对象编程
+    - DOM（实例）编程

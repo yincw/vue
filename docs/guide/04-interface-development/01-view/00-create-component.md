@@ -1,27 +1,20 @@
-# 创建页面
-
-| 分类 | Composition API（Vue3）| Options API（Vue3/2）
-| :--- | :--- | :--- |
-| 路由配置 | createRouter() | - | 
-| 路由类型 | createWebHistory() | - | 
-| 路由链接 | `<RouterLink>` | - | 
-| 路由视图 | `<RouterView>` | - | 
+# 创建组件
 
 ## 创建视图
 
-`src/views/AboutView.vue`
+`src/views/HomeView.vue`
 
 ::: code-group
 
 ```vue [Vue3]
 // 视图脚本
-<script lang="ts" step>
+<script lang="ts">
 </script>
 
 // 视图模板
 <template>
   <main>
-    <div>About View</div>
+    <div>Home View</div>
   </main>
 </template>
 
@@ -31,13 +24,13 @@
 
 ```vue [Vue2]
 // 视图脚本
-<script lang="ts" step>
+<script lang="ts">
 </script>
 
 // 视图模板
 <template>
   <main>
-    <div>About View</div>
+    <div>Home View</div>
   </main>
 </template>
 
@@ -64,14 +57,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
-    },
-    { // [!code focus:8]
-      path: '/about',
-      name: 'about',  // 路由名称
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue') // 路由懒加载的视图组件
     }
   ]
 })
@@ -90,14 +75,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
-    },
-    { // [!code focus:8]
-      path: '/about',
-      name: 'about',  // 路由名称
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue') // 路由懒加载的视图组件
     }
   ]
 })
@@ -109,14 +86,14 @@ export default router
 
 ## 创建导航菜单
 
-`src/App.vue`
+创建 Vue 应用 App 组件（全局布局组件）：`src/App.vue`
 
 ::: code-group
 
 ```vue [Vue3]
 // 脚本
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router' 
 </script>
 
 // 模板
@@ -124,10 +101,10 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink> // [!code focus]
     </nav>
   </header>
 
+  // 视图容器
   <RouterView />
 </template>
 
@@ -138,7 +115,7 @@ import { RouterLink, RouterView } from 'vue-router'
 ```vue [Vue2]
 // 脚本
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router' 
 </script>
 
 // 模板
@@ -146,10 +123,10 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink> // [!code focus]
     </nav>
   </header>
 
+  // 视图容器
   <RouterView />
 </template>
 
@@ -159,4 +136,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 :::
 
-访问 `/about` 即可查看页面内容。
+访问 `/` 即可查看页面（首页）内容。
+
+## 问题
+
+- 组件写法
+  - 有状态组件
+    - Class
+    - 函数
+  - 无状态组件
+- 如何划分组件功能（数据+方法）？

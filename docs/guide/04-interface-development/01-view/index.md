@@ -1,30 +1,11 @@
 # 视图
 
 - 创建组件
-  - React
-  - Vue
-    - https://umijs.org/docs/guides/use-vue
-- 生命周期
-  - 组件生命周期方法
-- 属性
-- 状态
-- 渲染
-  - 条件渲染
-  - 渲染列表
-- 事件/交互
-  - 事件处理
-- DOM
-  - DOM 实例
-  - DOM 实例引用
-- 样式
-  - Less
-  - PostCSS
-  - CSS Modules
-  - styled-components
-  - Tailwind CSS
-  - 主题化
+- 组件生命周期钩子函数
+- 组件属性
+- 组件状态
+- 组件交互/事件
+- 组件渲染
+- DOM 实例
+- 组件样式
 - TypeScript 支持
-  - TypeScript
-- 状态管理
-  - 组件通信
-- 异常处理

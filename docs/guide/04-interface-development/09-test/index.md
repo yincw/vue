@@ -6,3 +6,8 @@
   - Jest
 - 组件测试
   - @testing-library/react
+- Vitest
+
+## 参考
+
+- https://cn.vitest.dev/

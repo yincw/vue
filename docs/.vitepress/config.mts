@@ -152,7 +152,7 @@ export default defineConfig({
       nav: [
         // { text: '主页', link: '/' },
 
-        { text: '教程', link: '/guide/00-intro' },
+        { text: '教程', link: '/guide/00-intro/' },
         { text: '组件库', link: '/components/' },
         { text: 'API', link: '/api/' },
         { text: '场景问题', link: '/faq/' },
@@ -194,7 +194,7 @@ export default defineConfig({
       // outline: false, // 禁用页面导航（大纲）
       outline: {
         label: '页面导航',
-        level: 2,
+        level: [2,4],
       },
       // aside: 'left', // 页面导航渲染在左侧
       sidebarMenuLabel: '菜单',  // 移动端视图中显示

@@ -17,3 +17,10 @@
   - match
   - location
 - 路由数据加载
+
+## 参考
+
+- Vue3
+  - https://router.vuejs.org/zh/
+- Vue2
+  - https://v3.router.vuejs.org/zh/

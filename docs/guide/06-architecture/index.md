@@ -3,18 +3,23 @@
 - 关注点分离
 - 单向数据流
 - 逻辑复用
-  - 混入 mixin
+  - parent
+    - this.$parent
+  - 混入 mixins: []
+  - 扩展 extends: {}
+  - 依赖注入
+    - provide: {}
+    - inject: []
   - 高阶组件 HOC
   - 装饰器
   - Hooks
   - 上下文 Contexts
-  - 依赖注入
 - 响应式
 - Fiber 架构和 Diff 算法 v16
   - 任务调度
+- SPA
 - MAP
   - https://umijs.org/docs/guides/mpa
-- SPA
 - 微前端
   - Qiankun
 - PWA

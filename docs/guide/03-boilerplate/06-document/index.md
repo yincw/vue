@@ -1,3 +1,7 @@
 # 示例文档
 
-- docusaurus
+- vitepress
+
+## 参考
+
+- https://vitepress.dev/zh/

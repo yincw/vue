@@ -4,7 +4,7 @@ markdownStyles: true
 
 hero:
   name: Vue Notes
-  text: Vue 技术栈学习笔记 📒
+  text: Vue 技术栈学习笔记
   tagline: Vue 相关的方方面面，"独当一面" 必看
   image:
     src: /logo.svg
