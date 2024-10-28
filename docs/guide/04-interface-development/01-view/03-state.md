@@ -5,7 +5,6 @@
 | 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) | [data()](https://vuejs.org/api/options-state.html#data) | [data()](https://v2.cn.vuejs.org/v2/api/#data) | 
 | 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) | [computed](https://vuejs.org/api/options-state.html#computed) | [computed](https://v2.cn.vuejs.org/v2/api/#computed) | 
 | 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) | [watch](https://vuejs.org/api/options-state.html#watch) | [watch](https://v2.cn.vuejs.org/v2/api/#watch) | 
-| 立即渲染 | [nextTick()](https://vuejs.org/api/general.html#nexttick) | [$nextTick()](https://v2.cn.vuejs.org/v2/api/#vm-nextTick) | [Vue.nextTick()](https://v2.cn.vuejs.org/v2/api/#Vue-nextTick) | 
 | - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) | - | - | 
 | - | [watchPostEffect()](https://vuejs.org/api/reactivity-core#watchposteffect) | - | - | 
 | - | [watchSyncEffect()](https://vuejs.org/api/reactivity-core#watchsynceffect) | - | - | 

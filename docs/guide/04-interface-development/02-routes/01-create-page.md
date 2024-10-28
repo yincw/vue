@@ -2,10 +2,10 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3/2）
 | :--- | :--- | :--- |
-| 路由配置 | createRouter() | - | 
-| 路由类型 | createWebHistory() | - | 
 | 路由链接 | `<RouterLink>` | - | 
 | 路由视图 | `<RouterView>` | - | 
+| 路由配置 | createRouter() | - | 
+| 路由类型 | createWebHistory() | - | 
 
 ## 创建视图
 

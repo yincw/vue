@@ -136,6 +136,10 @@ export default {
   - onActivated(内) -> onActivated(中) -> onActivated(外)
   - onDeactivated(内) -> onDeactivated(中) -> onDeactivated(外)
 
+## 生命周期图示
+
+![Image](/lifecycle.png)
+
 
 ## 参考
 

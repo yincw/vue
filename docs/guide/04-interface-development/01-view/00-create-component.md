@@ -138,6 +138,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
 访问 `/` 即可查看页面（首页）内容。
 
+## 定义组件
+
+- [defineComponent()](https://vuejs.org/api/general.html#definecomponent)
+- Vue.extend()
+
 ## 问题
 
 - 组件写法

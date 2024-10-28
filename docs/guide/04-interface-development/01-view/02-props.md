@@ -2,11 +2,11 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3/2）
 | :--- | :--- | :--- |
-| 属性 | [defineProps()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [props](https://v2.cn.vuejs.org/v2/api/#props) | 
+| 声明属性及类型 | [defineProps()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [props](https://v2.cn.vuejs.org/v2/api/#props) | 
 | 属性默认值 | [withDefaults()](https://vuejs.org/api/sfc-script-setup.html#default-props-values-when-using-type-declaration) | [props](https://v2.cn.vuejs.org/v2/api/#props) | 
 | 属性透传 | [defineOptions()](https://vuejs.org/api/sfc-script-setup.html#defineoptions) | [inheritAttrs](https://v2.cn.vuejs.org/v2/api/#inheritAttrs) | 
 | 属性获取 | [useAttrs()](https://vuejs.org/api/composition-api-helpers.html#useattrs) | [$attrs](https://v2.cn.vuejs.org/v2/api/#vm-attrs) | 
-| - | [props](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [$props](https://v2.cn.vuejs.org/v2/api/#vm-props) | 
+| - | [var props](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [$props](https://v2.cn.vuejs.org/v2/api/#vm-props) | 
 
 ## 属性声明
 
@@ -221,8 +221,17 @@ export default {
 
 :::
 
+## 属性绑定
 
-## expose
+- v-bind/:
+
+## 属性修饰符
+
+- .prop
+- .camel
+- .sync
+
+## 公共属性
 
 - expose
 - defineExpose()
