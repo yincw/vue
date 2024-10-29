@@ -1,5 +1,6 @@
 # 性能优化
 
+- https://vuejs.org/guide/best-practices/performance.html
 - 0.12
   - 支持面向对象的组件写法
 - 0.13

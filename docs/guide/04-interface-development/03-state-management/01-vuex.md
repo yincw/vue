@@ -1,8 +1,5 @@
 # Vuex
 
-- Vuex
-- Pinia
+## Vuex 图示
 
-## Vuex
-
-## Pinia
+![Image](/vuex.png)

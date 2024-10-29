@@ -1,5 +1,10 @@
 # 路由
 
+路由 | 兼容 Vue 版本
+---|---
+[Vue Router 4](https://router.vuejs.org/zh/) | Vue 3
+[Vue Router 3](https://v3.router.vuejs.org/zh/api/) | Vue 2
+
 - 创建页面
   - React Router
 - 路由类型
@@ -17,10 +22,3 @@
   - match
   - location
 - 路由数据加载
-
-## 参考
-
-- Vue3
-  - https://router.vuejs.org/zh/
-- Vue2
-  - https://v3.router.vuejs.org/zh/

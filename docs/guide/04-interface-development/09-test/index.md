@@ -11,3 +11,5 @@
 ## 参考
 
 - https://cn.vitest.dev/
+- https://vuejs.org/guide/scaling-up/testing.html
+- https://v2.cn.vuejs.org/v2/guide/testing.html
