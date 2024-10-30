@@ -18,13 +18,48 @@
 
 ## 条件渲染
 
+根据表达式之真假值来有条件的渲染元素。在切换时元素及它的数据绑定/组件被销毁并重建。
+
+::: warning
+当和 `v-for` 一起使用时，`v-for` 的优先级比 `v-if` 更高。
+:::
+
 ## 列表渲染
+
+基于源数据多次渲染元素或模板块。此指令值，必须使用特定语法 `alias in expression`。
+
+```html
+<!-- <div v-for="(val, key) in object"> -->
+<!-- <div v-for="(val, name, index) in object"> -->
+<!-- <div v-for="(item, index) in items"> -->
+<div v-for="item in items">
+  {{ item.text }}
+</div>
+```
+
+`v-for` 的默认行为会尝试原地修改元素而不是移动它们。要强制其重新排序，你需要用特殊的 `key` 属性来提供一个排序提示：
+
+```html
+<div v-for="item in items" :key="item.id">
+  {{ item.text }}
+</div>
+```
 
 ## 显示隐藏
 
+根据表达式之真假值，切换元素的 `display` CSS 属性。
+
 ## 文本渲染
 
+更新元素的 `textContent`。如果要更新部分的 `textContent`，需要使用 `{{ Mustache }}` 插值。
+
 ## HTML 渲染
+
+更新元素的 `innerHTML`。注意：内容按普通 HTML 插入，不会作为 Vue 模板进行编译。
+
+::: warning
+在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS（Cross site scripting） 攻击。只在可信内容上使用 `v-html`，永不用在用户提交的内容上。
+:::
 
 ## 其他
 

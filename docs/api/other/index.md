@@ -20,3 +20,5 @@
   - Flutter
 - Desktop API
   - Electron
+
+- https://tsejx.github.io/javascript-guidebook/browser-object-model

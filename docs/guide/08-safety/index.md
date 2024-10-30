@@ -1,5 +1,8 @@
 # Web 安全
 
+- XSS
+- CFRS
+
 - 框架安全
   - 严格模式-安全检查
   - dangerouslySetInnerHTML
