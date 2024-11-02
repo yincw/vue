@@ -4,9 +4,13 @@
 | :--- | :--- | :--- | :--- |
 | - | - | - | - |
 
+- CSS
 - Less
+- Sass
+- Scss
 - PostCSS
-  - CSS Modules
+- Scoped CSS
+- CSS Modules
 - styled-components
 - Tailwind CSS
 

@@ -2,12 +2,15 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) | [data()](https://vuejs.org/api/options-state.html#data) | [data()](https://v2.cn.vuejs.org/v2/api/#data) | 
+| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) | [data](https://vuejs.org/api/options-state.html#data) | [data](https://v2.cn.vuejs.org/v2/api/#data) | 
+| - | - | [$data](https://vuejs.org/api/component-instance.html#data) | $data | 
 | 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) | [computed](https://vuejs.org/api/options-state.html#computed) | [computed](https://v2.cn.vuejs.org/v2/api/#computed) | 
-| 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) | [watch](https://vuejs.org/api/options-state.html#watch) | [watch](https://v2.cn.vuejs.org/v2/api/#watch) | 
+| 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) | [watch](https://vuejs.org/api/options-state.html#watch) /  | [watch](https://v2.cn.vuejs.org/v2/api/#watch) | 
+| - | - | [$watch()](https://vuejs.org/api/component-instance.html#watch) | [$watch()](https://v2.cn.vuejs.org/v2/api/#vm-watch) | 
 | - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) | - | - | 
 | - | [watchPostEffect()](https://vuejs.org/api/reactivity-core#watchposteffect) | - | - | 
 | - | [watchSyncEffect()](https://vuejs.org/api/reactivity-core#watchsynceffect) | - | - | 
+| - | [onWatcherCleanup()](https://vuejs.org/api/reactivity-core.html#onwatchercleanup) | - | - | 
 
 ## 状态
 

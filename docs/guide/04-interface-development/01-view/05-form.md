@@ -4,7 +4,6 @@
 | :--- | :--- | :--- | :--- |
 | 双向绑定 | - | [v-model](https://vuejs.org/api/built-in-directives.html#v-model) | [v-model](https://v2.cn.vuejs.org/v2/api/#v-model) |
 | 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel)| [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) | [model](https://v2.cn.vuejs.org/v2/api/#model) |
-| - | - | - | [$listeners](https://v2.cn.vuejs.org/v2/api/#vm-listeners) |
 
 ## 双向绑定
 

@@ -1,16 +1,3 @@
-# 自定义组件
-
-## TODOLIST
-
-:::preview TodoList.vue || TODOLIST 示例，支持初始值、增删改查项 以及 过滤项
-
-demo-preview=../../../demos/TodoList.vue
-
-:::
-
-`Todos.vue` 源码：
-
-```vue
 <script setup>
 import { ref, computed, useAttrs } from 'vue'
 
@@ -94,4 +81,3 @@ const handleRemove = (index) => {
   color: red;
 }
 </style>
-```

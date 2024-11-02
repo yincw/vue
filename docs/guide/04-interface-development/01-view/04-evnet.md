@@ -10,6 +10,7 @@
 | - | - | 组件卸载自动完成 | [$off](https://v2.cn.vuejs.org/v2/api/#vm-off) |
 | 事件及类型声明 | [defineEmits()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [emits](https://vuejs.org/api/options-state.html#emits) | [emits](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html#%E7%A7%BB%E6%A4%8D%E5%9B%9E%E6%9D%A5%E7%9A%84%E7%89%B9%E6%80%A7) +v2.7 |
 | 事件触发 | [var emit()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [$emit()](https://vuejs.org/api/component-instance.html#emit) | [$emit()](https://v2.cn.vuejs.org/v2/api/#vm-emit) |
+| - | - | - | [$listeners](https://v2.cn.vuejs.org/v2/api/#vm-listeners) |
 
 ## 事件回调声明
 

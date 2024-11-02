@@ -8,14 +8,14 @@
 | 应用生命周期钩子 | [app.mount()](https://vuejs.org/api/application.html#app-mount) | - | 
 | - | [app.onUnmount()](https://vuejs.org/api/application.html#app-onunmount) | - | 
 | - | [app.unmount()](https://vuejs.org/api/application.html#app-unmount) | - | 
+| 配置设置 | [app.config](https://vuejs.org/api/application.html#app-config) | [Vue.config](https://v2.cn.vuejs.org/v2/api/#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE) | 
 | 注册组件 | [app.component()](https://vuejs.org/api/application.html#app-component) | [Vue.component()](https://v2.cn.vuejs.org/v2/api/#Vue-component) | 
+| 扩展 | [defineComponent()](https://vuejs.org/api/general.html#definecomponent) | [Vue.extend()](https://v2.cn.vuejs.org/v2/api/#Vue-extend) | 
+| 混入 | [app.mixin()](https://vuejs.org/api/application.html#app-mixin) | [Vue.mixin()](https://v2.cn.vuejs.org/v2/api/#Vue-mixin) | 
 | 注册指令 | [app.directive()](https://vuejs.org/api/application.html#app-directive) | [Vue.directive()](https://v2.cn.vuejs.org/v2/api/#Vue-directive) | 
-| 安装插件 | [app.use()](https://vuejs.org/api/application.html#app-use) | [Vue.use()](https://v2.cn.vuejs.org/v2/api/#Vue-use) | 
 | 依赖注入 | [app.provide()](https://vuejs.org/api/application.html#app-provide) | - | 
 | 上下文 | [app.runWithContext()](https://vuejs.org/api/application.html#app-runwithcontext) | - | 
-| 混入 | [app.mixin()](https://vuejs.org/api/application.html#app-mixin) | [Vue.mixin()](https://v2.cn.vuejs.org/v2/api/#Vue-mixin) | 
-| 扩展 | - | [Vue.extend()](https://v2.cn.vuejs.org/v2/api/#Vue-extend) | 
-| 配置设置 | [app.config](https://vuejs.org/api/application.html#app-config) | [Vue.config](https://v2.cn.vuejs.org/v2/api/#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE) | 
+| 安装插件 | [app.use()](https://vuejs.org/api/application.html#app-use) | [Vue.use()](https://v2.cn.vuejs.org/v2/api/#Vue-use) | 
 
 ## 入口配置
 

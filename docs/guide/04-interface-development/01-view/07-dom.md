@@ -4,9 +4,9 @@
 | :--- | :--- | :--- | :--- |
 | DOM 引用 | [useTemplateRef()](https://vuejs.org/api/composition-api-helpers.html#usetemplateref) | - | [el](https://v2.cn.vuejs.org/v2/api/#el) |
 | DOM 实例 | - | [$el](https://vuejs.org/api/component-instance.html#el) | [$el](https://v2.cn.vuejs.org/v2/api/#vm-el) |
+| DOM 实例层级 | - | [$root](https://vuejs.org/api/component-instance.html#root) | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) |
 | - | - | [$parent](https://vuejs.org/api/component-instance.html#parent) | [$parent](https://v2.cn.vuejs.org/v2/api/#vm-parent) |
 | - | - | - | [$children](https://v2.cn.vuejs.org/v2/api/#vm-children) |
-| - | - | [$root](https://vuejs.org/api/component-instance.html#root) | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) |
 | 获取DOM | - | [$refs](https://vuejs.org/api/component-instance.html#refs) | [$refs](https://v2.cn.vuejs.org/v2/api/#vm-refs) |
 | 立即获取 | [nextTick()](https://vuejs.org/api/general.html#nexttick) | [$nextTick()](https://vuejs.org/api/component-instance.html#nexttick) | [Vue.nextTick()](https://v2.cn.vuejs.org/v2/api/#Vue-nextTick) / [$nextTick()](https://v2.cn.vuejs.org/v2/api/#vm-nextTick) |
 | - | - | [$forceUpdate()](https://vuejs.org/api/component-instance.html#forceupdate) | [$forceUpdate()](https://v2.cn.vuejs.org/v2/api/#vm-forceUpdate) |
@@ -14,7 +14,7 @@
 ## 立即更新 DOM
 
 > 当你在 Vue 中改变响应状态时，产生的 DOM 更新不会同步应用。相反，Vue 会缓冲它们，直到 “next tick”，以确保每个组件只更新一次，无论你做了多少状态更改。
-> 
+
 > nextTick() 可以在状态更改后立即使用，以等待 DOM 更新完成。您可以将回调作为参数传递，也可以等待返回的 Promise。
 
 ::: code-group
