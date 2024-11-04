@@ -2,6 +2,7 @@
 
 - https://v2.cn.vuejs.org/v2/style-guide/
 - https://eslint.vuejs.org/
+- https://lq782655835.github.io/blogs/team-standard/0.standard-ai-summary.html
 
 - React 编码规范
 - 前后端接口交互规范

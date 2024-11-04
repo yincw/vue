@@ -18,7 +18,7 @@
 | - | [useHost()](https://vuejs.org/api/custom-elements.html#usehost) | - | - |
 | - | [$host()](https://vuejs.org/api/custom-elements.html#this-host) | - | - |
 | 函数式组件 | - | - | [functional](https://v2.cn.vuejs.org/v2/api/#functional) |
-| 模板编译 | - | [compilerOptions](https://vuejs.org/api/options-rendering.html#compileroptions) | [`Vue.compile()`](https://v2.cn.vuejs.org/v2/api/#Vue-compile) |
+| 模板编译 | - | - | [`Vue.compile()`](https://v2.cn.vuejs.org/v2/api/#Vue-compile) |
 | 自定义渲染 | [`createRenderer()`](https://vuejs.org/api/custom-renderer.html#createrenderer) | - | - |
 | 服务端渲染 | [`createSSRApp()`](https://vuejs.org/api/application.html#createssrapp) | - | [$isServer](https://v2.cn.vuejs.org/v2/api/#vm-isServer) / [vue-server-renderer](https://v2.ssr.vuejs.org/zh/) |
 | - | [renderToString()](https://vuejs.org/api/ssr.html#rendertostring) | - | - |
@@ -33,7 +33,6 @@
 
 - `text/x-template`
 - template
-- `<slot>`
 - `<template>`
 
 ## 渲染函数
@@ -54,6 +53,8 @@
 - functional
 
 ## 模板编译
+
+模板转换为渲染函数：
 
 - `Vue.compile()`
 

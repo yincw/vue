@@ -1,22 +1,165 @@
 # 组件样式
 
-| 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
-| :--- | :--- | :--- | :--- |
-| - | - | - | - |
+## 预处理
 
-- CSS
-- Less
-- Sass
-- Scss
-- PostCSS
-- Scoped CSS
-- CSS Modules
-- styled-components
-- Tailwind CSS
+```vue
+<style lang="less">  // Less
+// <style lang="sass"> // Sass
+// <style lang="scss"> // Scss
+// <style lang="stylus"> // Stylus
+// <style lang="postcss"> // PostCSS
+</style>
+```
+
+## Scoped CSS
+
+```vue
+<style scoped>
+.example {
+  color: red;
+}
+</style>
+
+<template>
+  <div class="example">hi</div>
+</template>
+```
+
+### 深度选择器 :deep()
+
+```vue
+<style scoped>
+.a :deep(.b) {
+  /* ... */
+}
+</style>
+```
+
+### 插槽选择器 :slotted()
+
+```vue
+<style scoped>
+:slotted(div) {
+  color: red;
+}
+</style>
+```
+
+### 全局选择器 :global()
+
+```vue
+<style scoped>
+:global(.red) {
+  color: red;
+}
+</style>
+```
+
+## CSS Modules
+
+### $style
+
+```vue [Vue3]
+<template>
+  <p :class="$style.red">This should be red</p>
+</template>
+
+<style module>
+.red {
+  color: red;
+}
+</style>
+```
+
+### useCssModule()
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+import { useCssModule } from 'vue'
+
+const classes = useCssModule()
+// const classes = useCssModule('classes')
+</script>
+
+<template>
+  <p :class="classes.red">red</p>
+</template>
+
+<style module>
+/* <style module="classes"> */
+.red {
+  color: red;
+}
+</style>
+```
+
+```vue [Vue2]
+<template>
+  <p :class="classes.red">red</p>
+</template>
+
+<style module="classes">
+.red {
+  color: red;
+}
+</style>
+```
+
+## v-bind()
+
+::: code-group
+
+```vue [Vue3]
+<script setup>
+import { ref } from 'vue'
+const theme = ref({
+    color: 'red',
+})
+</script>
+
+<template>
+  <p>hello</p>
+</template>
+
+<style scoped>
+p {
+  color: v-bind('theme.color');
+}
+</style>
+```
+
+```vue [Vue2]
+<script>
+export default {
+  data() {
+    return {
+      color: 'red'
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="text">hello</div>
+</template>
+
+<style>
+.text {
+  color: v-bind(color);
+}
+</style>
+```
+
+:::
+
+- https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F
 
 ## 参考
 
-- https://v2.cn.vuejs.org/v2/guide/class-and-style.html#%E7%BB%91%E5%AE%9A%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F
+- styled-components
+- Tailwind CSS
 - https://vuejs.org/api/sfc-spec.html#pre-processors
 - https://vuejs.org/api/sfc-css-features.html
 - https://cn.vitejs.dev/guide/features#css-pre-processors

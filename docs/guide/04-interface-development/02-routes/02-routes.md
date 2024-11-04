@@ -1,6 +1,6 @@
 # 路由
 
-| 分类 | Composition API（Vue3）| Options API（Vue3/2）
+| 分类 | Vue Router 4（Vue3）| Vue Router 3（Vue2）
 | :--- | :--- | :--- |
 | - | - | - | 
 
