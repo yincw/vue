@@ -2,13 +2,13 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）| 
 | :--- | :--- | :--- | :--- |
-| 事件回调声明 | - | [methods](https://vuejs.org/api/options-state.html#methods) | [methods](https://v2.cn.vuejs.org/v2/api/#methods) |
+| 事件回调声明 | - | [`methods`](https://vuejs.org/api/options-state.html#methods) | [`methods`](https://v2.cn.vuejs.org/v2/api/#methods) |
 | DOM 事件对象 | - | [$event](https://vuejs.org/guide/essentials/event-handling.html#accessing-event-argument-in-inline-handlers) | [$event](https://v2.cn.vuejs.org/v2/guide/events.html#%E5%86%85%E8%81%94%E5%A4%84%E7%90%86%E5%99%A8%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95) |
 | 事件绑定/监听 | - | [@](https://vuejs.org/api/built-in-directives.html#v-on) / [v-on](https://vuejs.org/api/built-in-directives.html#v-on) | [@ / v-on](https://v2.cn.vuejs.org/v2/api/#v-on) |
 | - | - | @/v-on | [$on](https://v2.cn.vuejs.org/v2/api/#vm-on) |
 | - | - | [.once](https://vuejs.org/guide/essentials/event-handling.html#event-modifiers) | [$once](https://v2.cn.vuejs.org/v2/api/#vm-once) |
 | - | - | 组件卸载自动完成 | [$off](https://v2.cn.vuejs.org/v2/api/#vm-off) |
-| 事件及类型声明 | [defineEmits()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [emits](https://vuejs.org/api/options-state.html#emits) | [emits](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html#%E7%A7%BB%E6%A4%8D%E5%9B%9E%E6%9D%A5%E7%9A%84%E7%89%B9%E6%80%A7) +v2.7 |
+| 事件及类型声明 | [defineEmits()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [`emits`](https://vuejs.org/api/options-state.html#emits) | [`emits`](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html#%E7%A7%BB%E6%A4%8D%E5%9B%9E%E6%9D%A5%E7%9A%84%E7%89%B9%E6%80%A7) +v2.7 |
 | 事件触发 | [var emit()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [$emit()](https://vuejs.org/api/component-instance.html#emit) | [$emit()](https://v2.cn.vuejs.org/v2/api/#vm-emit) |
 | - | - | - | [$listeners](https://v2.cn.vuejs.org/v2/api/#vm-listeners) |
 

@@ -3,7 +3,7 @@
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
 | 双向绑定 | - | [v-model](https://vuejs.org/api/built-in-directives.html#v-model) | [v-model](https://v2.cn.vuejs.org/v2/api/#v-model) |
-| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel)| [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) | [model](https://v2.cn.vuejs.org/v2/api/#model) |
+| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel)| [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) | [`model`](https://v2.cn.vuejs.org/v2/api/#model) |
 
 ## 双向绑定
 
@@ -392,12 +392,6 @@ export default {
 `.lazy` | 取代 `input` 监听 `change` 事件
 `.number` | 输入字符串转为有效的数字
 `.trim` | 输入首尾空格过滤
-
-## 问题
-
-> CSS 如何保持空格显示
-
-- `white-space: pre-line`
 
 ## 参考
 

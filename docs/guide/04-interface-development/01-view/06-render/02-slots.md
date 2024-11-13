@@ -7,7 +7,7 @@
 | 作用域插槽 | - | 同上 | [~~slot-scope~~](https://v2.cn.vuejs.org/v2/api/#slot-scope-%E5%BA%9F%E5%BC%83) v2.5 |
 | 作用域插槽 | - | 同上 | [~~scope~~](https://v2.cn.vuejs.org/v2/api/#scope-%E7%A7%BB%E9%99%A4) |
 | 插槽出口 | - | [`<slot>`](https://vuejs.org/api/built-in-special-elements.html#slot) / name | [`<slot>`](https://v2.cn.vuejs.org/v2/api/#slot) / name |
-| 定义插槽 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [slots](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
+| 定义插槽 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [`slots`](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
 | 插槽实例 | [useSlots()](https://vuejs.org/api/sfc-script-setup.html#useslots-useattrs) | [$slots](https://vuejs.org/api/component-instance.html#slots) | [$slots](https://v2.cn.vuejs.org/v2/api/#vm-slots) |
 | - | - | - | [~~$scopedSlots~~](https://v2.cn.vuejs.org/v2/api/#vm-scopedSlots) v2.1 |
 | 渲染位置 | - | [`<Teleport>`](https://vuejs.org/api/built-in-components.html#teleport) | - |

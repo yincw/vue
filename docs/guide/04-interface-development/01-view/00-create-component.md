@@ -148,6 +148,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
 - [defineComponent()](https://vuejs.org/api/general.html#definecomponent)
 - Vue.extend()
+- defineComponent() 定义具有类型推理的 Vue 组件
+- defineAsyncComponent() 定义异步组件，该组件仅在渲染时延迟加载。
 
 ## 问题
 

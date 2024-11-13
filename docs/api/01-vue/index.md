@@ -40,9 +40,9 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3/2）
 | :--- | :--- | :--- |
-| 声明属性及类型 | [defineProps()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [props](https://v2.cn.vuejs.org/v2/api/#props) | 
+| 声明属性及类型 | [defineProps()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [`props`](https://v2.cn.vuejs.org/v2/api/#props) | 
 | 属性默认值 | [withDefaults()](https://vuejs.org/api/sfc-script-setup.html#default-props-values-when-using-type-declaration) | 同上 | 
-| 属性透传 | [defineOptions()](https://vuejs.org/api/sfc-script-setup.html#defineoptions) | [inheritAttrs](https://v2.cn.vuejs.org/v2/api/#inheritAttrs) | 
+| 属性透传 | [defineOptions()](https://vuejs.org/api/sfc-script-setup.html#defineoptions) | [`inheritAttrs`](https://v2.cn.vuejs.org/v2/api/#inheritAttrs) | 
 | 属性获取 | [useAttrs()](https://vuejs.org/api/composition-api-helpers.html#useattrs) | [$attrs](https://v2.cn.vuejs.org/v2/api/#vm-attrs) | 
 | - | [var props](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [$props](https://v2.cn.vuejs.org/v2/api/#vm-props) | 
 
@@ -50,27 +50,30 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) | [data](https://vuejs.org/api/options-state.html#data) | [data](https://v2.cn.vuejs.org/v2/api/#data) | 
-| - | - | [$data](https://vuejs.org/api/component-instance.html#data) | [$data](https://v2.cn.vuejs.org/v2/api/#vm-data) | 
-| 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) | [computed](https://vuejs.org/api/options-state.html#computed) | [computed](https://v2.cn.vuejs.org/v2/api/#computed) | 
-| 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) | [watch](https://vuejs.org/api/options-state.html#watch)  | [watch](https://v2.cn.vuejs.org/v2/api/#watch) | 
-| - | - | [$watch()](https://vuejs.org/api/component-instance.html#watch) | [$watch()](https://v2.cn.vuejs.org/v2/api/#vm-watch) | 
-| - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) | - | - | 
-| - | [watchPostEffect()](https://vuejs.org/api/reactivity-core#watchposteffect) | - | - | 
-| - | [watchSyncEffect()](https://vuejs.org/api/reactivity-core#watchsynceffect) | - | - | 
-| - | [onWatcherCleanup()](https://vuejs.org/api/reactivity-core.html#onwatchercleanup) | - | - | 
+| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) | [`data`](https://vuejs.org/api/options-state.html#data) | [`data`](https://v2.cn.vuejs.org/v2/api/#data) |
+| - | - | [$data](https://vuejs.org/api/component-instance.html#data) | [$data](https://v2.cn.vuejs.org/v2/api/#vm-data) |
+| 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) | [`computed`](https://vuejs.org/api/options-state.html#computed) | [`computed`](https://v2.cn.vuejs.org/v2/api/#computed) |
+| 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) | [`watch`](https://vuejs.org/api/options-state.html#watch)  | [`watch`](https://v2.cn.vuejs.org/v2/api/#watch) |
+| - | - | [$watch()](https://vuejs.org/api/component-instance.html#watch) | [$watch()](https://v2.cn.vuejs.org/v2/api/#vm-watch) |
+| - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) | - | - |
+| - | [watchPostEffect()](https://vuejs.org/api/reactivity-core#watchposteffect) | - | - |
+| - | [watchSyncEffect()](https://vuejs.org/api/reactivity-core#watchsynceffect) | - | - |
+| - | [onWatcherCleanup()](https://vuejs.org/api/reactivity-core.html#onwatchercleanup) | - | - |
+| - | [effectScope()](https://vuejs.org/api/reactivity-advanced.html#effectscope) | - | - |
+| - | [getCurrentScope()](https://vuejs.org/api/reactivity-advanced.html#getcurrentscope) | - | - |
+| - | [onScopeDispose()](https://vuejs.org/api/reactivity-advanced.html#onscopedispose) | - | - |
 
 ## 组件事件
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）| 
 | :--- | :--- | :--- | :--- |
-| 事件回调声明 | - | [methods](https://vuejs.org/api/options-state.html#methods) | [methods](https://v2.cn.vuejs.org/v2/api/#methods) |
+| 事件回调声明 | - | [`methods`](https://vuejs.org/api/options-state.html#methods) | [`methods`](https://v2.cn.vuejs.org/v2/api/#methods) |
 | DOM 事件对象 | - | [$event](https://vuejs.org/guide/essentials/event-handling.html#accessing-event-argument-in-inline-handlers) | [$event](https://v2.cn.vuejs.org/v2/guide/events.html#%E5%86%85%E8%81%94%E5%A4%84%E7%90%86%E5%99%A8%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95) |
 | 事件绑定/监听 | - | [@](https://vuejs.org/api/built-in-directives.html#v-on) / [v-on](https://vuejs.org/api/built-in-directives.html#v-on) | [@ / v-on](https://v2.cn.vuejs.org/v2/api/#v-on) |
 | - | - | @/v-on | [$on](https://v2.cn.vuejs.org/v2/api/#vm-on) |
 | - | - | [.once](https://vuejs.org/guide/essentials/event-handling.html#event-modifiers) | [$once](https://v2.cn.vuejs.org/v2/api/#vm-once) |
 | - | - | 组件卸载自动完成 | [$off](https://v2.cn.vuejs.org/v2/api/#vm-off) |
-| 事件及类型声明 | [defineEmits()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [emits](https://vuejs.org/api/options-state.html#emits) | [emits](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html#%E7%A7%BB%E6%A4%8D%E5%9B%9E%E6%9D%A5%E7%9A%84%E7%89%B9%E6%80%A7) +v2.7 |
+| 事件及类型声明 | [defineEmits()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [`emits`](https://vuejs.org/api/options-state.html#emits) | [`emits`](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html#%E7%A7%BB%E6%A4%8D%E5%9B%9E%E6%9D%A5%E7%9A%84%E7%89%B9%E6%80%A7) +v2.7 |
 | 事件触发 | [var emit()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) | [$emit()](https://vuejs.org/api/component-instance.html#emit) | [$emit()](https://v2.cn.vuejs.org/v2/api/#vm-emit) |
 | - | - | - | [$listeners](https://v2.cn.vuejs.org/v2/api/#vm-listeners) |
 
@@ -79,7 +82,7 @@
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
 | 双向绑定 | - | [v-model](https://vuejs.org/api/built-in-directives.html#v-model) | [v-model](https://v2.cn.vuejs.org/v2/api/#v-model) |
-| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel)| [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) | [model](https://v2.cn.vuejs.org/v2/api/#model) |
+| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel)| [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) | [`model`](https://v2.cn.vuejs.org/v2/api/#model) |
 
 ## 指令
 
@@ -88,7 +91,7 @@
 | 条件渲染 | - | [v-if](https://vuejs.org/api/built-in-directives.html#v-if) | [v-if](https://v2.cn.vuejs.org/v2/api/#v-if) |
 | - | - | [v-else-if](https://vuejs.org/api/built-in-directives.html#v-else-if) | [v-else-if](https://v2.cn.vuejs.org/v2/api/#v-else-if) |
 | - | - | [v-else](https://vuejs.org/api/built-in-directives.html#v-else) | [v-else](https://v2.cn.vuejs.org/v2/api/#v-else) |
-| 列表渲染 | - | [v-for](https://vuejs.org/api/built-in-directives.html#v-for) / [`:key`](https://vuejs.org/api/built-in-special-attributes.html#key) | [v-for](https://v2.cn.vuejs.org/v2/api/#v-for) / [`:key`](https://v2.cn.vuejs.org/v2/api/#key) |
+| 列表渲染 | - | [v-for](https://vuejs.org/api/built-in-directives.html#v-for) / [:key](https://vuejs.org/api/built-in-special-attributes.html#key) | [v-for](https://v2.cn.vuejs.org/v2/api/#v-for) / [:key](https://v2.cn.vuejs.org/v2/api/#key) |
 | 显示隐藏 | - | [v-show](https://vuejs.org/api/built-in-directives.html#v-show) | [v-show](https://v2.cn.vuejs.org/v2/api/#v-show) |
 | 文本渲染 | - | [v-text](https://vuejs.org/api/built-in-directives.html#v-text) | [v-text](https://v2.cn.vuejs.org/v2/api/#v-text) |
 | HTML渲染 | - | [v-html](https://vuejs.org/api/built-in-directives.html#v-html) | [v-html](https://v2.cn.vuejs.org/v2/api/#v-html) |
@@ -96,7 +99,7 @@
 | 隐藏未编译插值 | - | [v-cloak](https://vuejs.org/api/built-in-directives.html#v-cloak) | [v-cloak](https://v2.cn.vuejs.org/v2/api/#v-cloak) |
 | 渲染一次 | - | [v-once](https://vuejs.org/api/built-in-directives.html#v-once) | [v-once](https://v2.cn.vuejs.org/v2/api/#v-once) |
 | 缓存模板 | - | [v-memo](https://vuejs.org/api/built-in-directives.html#v-memo) | - |
-| 注册指令 | - | [directives](https://vuejs.org/api/options-misc.html#directives) | [directives](https://v2.cn.vuejs.org/v2/api/#directives) |
+| 注册指令 | - | [`directives`](https://vuejs.org/api/options-misc.html#directives) | [`directives`](https://v2.cn.vuejs.org/v2/api/#directives) |
 | - | [app.directive()](https://vuejs.org/api/application.html#app-directive) | - | [Vue.directive()](https://v2.cn.vuejs.org/v2/api/#Vue-directive) |
 
 ## 插槽
@@ -108,7 +111,7 @@
 | 作用域插槽 | - | 同上 | [~~slot-scope~~](https://v2.cn.vuejs.org/v2/api/#slot-scope-%E5%BA%9F%E5%BC%83) v2.5 |
 | 作用域插槽 | - | 同上 | [~~scope~~](https://v2.cn.vuejs.org/v2/api/#scope-%E7%A7%BB%E9%99%A4) |
 | 插槽出口 | - | [`<slot>`](https://vuejs.org/api/built-in-special-elements.html#slot) / name | [`<slot>`](https://v2.cn.vuejs.org/v2/api/#slot) / name |
-| 定义插槽 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [slots](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
+| 定义插槽 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [`slots`](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
 | 插槽实例 | [useSlots()](https://vuejs.org/api/sfc-script-setup.html#useslots-useattrs) | [$slots](https://vuejs.org/api/component-instance.html#slots) | [$slots](https://v2.cn.vuejs.org/v2/api/#vm-slots) |
 | - | - | - | [~~$scopedSlots~~](https://v2.cn.vuejs.org/v2/api/#vm-scopedSlots) v2.1 |
 | 渲染位置 | - | [`<Teleport>`](https://vuejs.org/api/built-in-components.html#teleport) | - |
@@ -117,10 +120,10 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 模板 | - | [template](https://vuejs.org/api/options-rendering.html#template) | [template](https://v2.cn.vuejs.org/v2/api/#template) |
+| 模板 | - | [`template`](https://vuejs.org/api/options-rendering.html#template) | [`template`](https://v2.cn.vuejs.org/v2/api/#template) |
 | - | - | [`<template>`](https://vuejs.org/api/built-in-special-elements.html#template) | [`<template>`](https://v2.cn.vuejs.org/v2/guide/single-file-components.html) |
-| 渲染函数 | - | [`render()`](https://vuejs.org/api/options-rendering.html#render) | [`render()`](https://v2.cn.vuejs.org/v2/api/#render) |
-| - | - | [`h()`](https://vuejs.org/api/render-function.html#h) | [`createElement()`](https://v2.cn.vuejs.org/v2/guide/render-function.html#createElement-%E5%8F%82%E6%95%B0) / [`h()`](https://v2.cn.vuejs.org/v2/guide/render-function.html#JSX) |
+| 渲染函数 | - | [render()](https://vuejs.org/api/options-rendering.html#render) | [render()](https://v2.cn.vuejs.org/v2/api/#render) |
+| - | - | [h()](https://vuejs.org/api/render-function.html#h) | [createElement()](https://v2.cn.vuejs.org/v2/guide/render-function.html#createElement-%E5%8F%82%E6%95%B0) / [h()](https://v2.cn.vuejs.org/v2/guide/render-function.html#JSX) |
 | - | [mergeProps()](https://vuejs.org/api/render-function.html#mergeprops) | - | - |
 | - | [resolveComponent()](https://vuejs.org/api/render-function.html#resolvecomponent) | - | - |
 | - | [resolveDirective()](https://vuejs.org/api/render-function.html#resolvedirective) | - | - |
@@ -132,10 +135,10 @@
 | - | [useShadowRoot()](https://vuejs.org/api/custom-elements.html#useshadowroot) | - | - |
 | - | [useHost()](https://vuejs.org/api/custom-elements.html#usehost) | - | - |
 | - | [$host()](https://vuejs.org/api/custom-elements.html#this-host) | - | - |
-| 函数式组件 | - | - | [functional](https://v2.cn.vuejs.org/v2/api/#functional) |
-| 模板编译 | - | - | [`Vue.compile()`](https://v2.cn.vuejs.org/v2/api/#Vue-compile) |
-| 自定义渲染 | [`createRenderer()`](https://vuejs.org/api/custom-renderer.html#createrenderer) | - | - |
-| 服务端渲染 | [`createSSRApp()`](https://vuejs.org/api/application.html#createssrapp) | - | [$isServer](https://v2.cn.vuejs.org/v2/api/#vm-isServer) / [vue-server-renderer](https://v2.ssr.vuejs.org/zh/) |
+| 函数式组件 | - | - | [`functional`](https://v2.cn.vuejs.org/v2/api/#functional) |
+| 模板编译 | - | - | [Vue.compile()](https://v2.cn.vuejs.org/v2/api/#Vue-compile) |
+| 自定义渲染 | [createRenderer()](https://vuejs.org/api/custom-renderer.html#createrenderer) | - | - |
+| 服务端渲染 | [createSSRApp()](https://vuejs.org/api/application.html#createssrapp) | - | [$isServer](https://v2.cn.vuejs.org/v2/api/#vm-isServer) / [vue-server-renderer](https://v2.ssr.vuejs.org/zh/) |
 | - | [renderToString()](https://vuejs.org/api/ssr.html#rendertostring) | - | - |
 | - | [renderToNodeStream()](https://vuejs.org/api/ssr.html#rendertonodestream) | - | - |
 | - | [pipeToNodeWritable()](https://vuejs.org/api/ssr.html#pipetonodewritable) | - | - |
@@ -148,35 +151,37 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| DOM 引用 | [useTemplateRef()](https://vuejs.org/api/composition-api-helpers.html#usetemplateref) | - | [el](https://v2.cn.vuejs.org/v2/api/#el) |
+| DOM 挂载 | - | - | [`el`](https://v2.cn.vuejs.org/v2/api/#el) |
 | DOM 实例 | - | [$el](https://vuejs.org/api/component-instance.html#el) | [$el](https://v2.cn.vuejs.org/v2/api/#vm-el) |
-| DOM 实例层级 | - | [$root](https://vuejs.org/api/component-instance.html#root) | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) |
+| - | - | [$root](https://vuejs.org/api/component-instance.html#root) | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) |
 | - | - | [$parent](https://vuejs.org/api/component-instance.html#parent) | [$parent](https://v2.cn.vuejs.org/v2/api/#vm-parent) |
 | - | - | - | [$children](https://v2.cn.vuejs.org/v2/api/#vm-children) |
-| 获取DOM | - | [$refs](https://vuejs.org/api/component-instance.html#refs) | [$refs](https://v2.cn.vuejs.org/v2/api/#vm-refs) |
-| 立即获取 | [nextTick()](https://vuejs.org/api/general.html#nexttick) | [$nextTick()](https://vuejs.org/api/component-instance.html#nexttick) | [Vue.nextTick()](https://v2.cn.vuejs.org/v2/api/#Vue-nextTick) / [$nextTick()](https://v2.cn.vuejs.org/v2/api/#vm-nextTick) |
-| - | - | [$forceUpdate()](https://vuejs.org/api/component-instance.html#forceupdate) | [$forceUpdate()](https://v2.cn.vuejs.org/v2/api/#vm-forceUpdate) |
+| 模板引用 | - | [ref](https://vuejs.org/api/built-in-special-attributes.html#ref) | [ref](https://v2.cn.vuejs.org/v2/api/#ref) |
+| - | [useTemplateRef()](https://vuejs.org/api/composition-api-helpers.html#usetemplateref) v3.5 | [$refs](https://vuejs.org/api/component-instance.html#refs) | [$refs](https://v2.cn.vuejs.org/v2/api/#vm-refs) |
+| 强制 DOM 更新 | - | [$forceUpdate()](https://vuejs.org/api/component-instance.html#forceupdate) | [$forceUpdate()](https://v2.cn.vuejs.org/v2/api/#vm-forceUpdate) |
+| 立即获取 DOM | [nextTick()](https://vuejs.org/api/general.html#nexttick) | [$nextTick()](https://vuejs.org/api/component-instance.html#nexttick) | [Vue.nextTick()](https://v2.cn.vuejs.org/v2/api/#Vue-nextTick) / [$nextTick()](https://v2.cn.vuejs.org/v2/api/#vm-nextTick) |
+| 公开实例属性 | [defineExpose()](https://vuejs.org/api/sfc-script-setup.html#defineexpose) | [`expose`](https://vuejs.org/api/options-state.html#expose) | - |
 
 ## 可复用性
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
 | 扩展 | - | [`extends`](https://vuejs.org/api/options-composition.html#extends) | [`extends`](https://v2.cn.vuejs.org/v2/api/#extends) | 
-| - | [`defineComponent()`](https://vuejs.org/api/general.html#definecomponent) / [`defineAsyncComponent()`](https://vuejs.org/api/general.html#defineasynccomponent) | - | [`Vue.extend()`](https://v2.cn.vuejs.org/v2/api/#Vue-extend) |
+| - | [defineComponent()](https://vuejs.org/api/general.html#definecomponent) / [defineAsyncComponent()](https://vuejs.org/api/general.html#defineasynccomponent) | - | [Vue.extend()](https://v2.cn.vuejs.org/v2/api/#Vue-extend) |
 | 混入 | - | [`mixins`](https://vuejs.org/api/options-composition.html#mixins) | [`mixins`](https://v2.cn.vuejs.org/v2/api/#mixins) |
-| - | [`app.mixin()`](https://vuejs.org/api/application.html#app-mixin) | - | [`Vue.mixin()`](https://v2.cn.vuejs.org/v2/api/#Vue-mixin) |
+| - | [app.mixin()](https://vuejs.org/api/application.html#app-mixin) | - | [Vue.mixin()](https://v2.cn.vuejs.org/v2/api/#Vue-mixin) |
 | 指令 | - | [`directives`](https://vuejs.org/api/options-misc.html#directives) | [`directives`](https://v2.cn.vuejs.org/v2/api/#directives) |
-| - | [`app.directive()`](https://vuejs.org/api/application.html#app-directive) | - | [`Vue.directive()`](https://v2.cn.vuejs.org/v2/api/#Vue-directive) |
-| 依赖注入/上下文 | [`provide()`](https://vuejs.org/api/composition-api-dependency-injection.html#provide) | [`provide`](https://vuejs.org/api/options-composition.html#provide) | [`provide`](https://v2.cn.vuejs.org/v2/api/#provide-inject) |
-| - | [`app.provide()`](https://vuejs.org/api/application.html#app-provide) | - | - |
-| - | [`inject()`](https://vuejs.org/api/composition-api-dependency-injection.html#inject) | [`inject`](https://vuejs.org/api/options-composition.html#inject) | [`inject`](https://v2.cn.vuejs.org/v2/api/#provide-inject) |
-| - | [`hasInjectionContext()`](https://vuejs.org/api/composition-api-dependency-injection.html#has-injection-context) | - | - |
-| - | [`app.runWithContext()`](https://vuejs.org/api/application.html#app-runwithcontext) | - | - |
-| 插件 | [`app.use()`](https://vuejs.org/api/application.html#app-use) | - | [`Vue.use()`](https://v2.cn.vuejs.org/v2/api/#Vue-use) |
-| 过滤器 | - | - | [`filters`](https://v2.cn.vuejs.org/v2/api/#filters) / [`Vue.filter()`](https://v2.cn.vuejs.org/v2/api/#Vue-filter) |
-| 实例层级 | [`useShadowRoot()`](https://vuejs.org/api/custom-elements.html#useshadowroot) | - | [`$root`](https://v2.cn.vuejs.org/v2/api/#vm-root) |
-| - | - | `$parent` | [`$parent`](https://v2.cn.vuejs.org/v2/api/#vm-parent) |
-| - | - | - | [`$children`](https://v2.cn.vuejs.org/v2/api/#vm-children) |
+| - | [app.directive()](https://vuejs.org/api/application.html#app-directive) | - | [Vue.directive()](https://v2.cn.vuejs.org/v2/api/#Vue-directive) |
+| 依赖注入/上下文 | [provide()](https://vuejs.org/api/composition-api-dependency-injection.html#provide) | [`provide`](https://vuejs.org/api/options-composition.html#provide) | [`provide`](https://v2.cn.vuejs.org/v2/api/#provide-inject) |
+| - | [app.provide()](https://vuejs.org/api/application.html#app-provide) | - | - |
+| - | [inject()](https://vuejs.org/api/composition-api-dependency-injection.html#inject) | [`inject`](https://vuejs.org/api/options-composition.html#inject) | [`inject`](https://v2.cn.vuejs.org/v2/api/#provide-inject) |
+| - | [hasInjectionContext()](https://vuejs.org/api/composition-api-dependency-injection.html#has-injection-context) | - | - |
+| - | [app.runWithContext()](https://vuejs.org/api/application.html#app-runwithcontext) | - | - |
+| 插件 | [app.use()](https://vuejs.org/api/application.html#app-use) | - | [Vue.use()](https://v2.cn.vuejs.org/v2/api/#Vue-use) |
+| 过滤器 | - | - | [`filters`](https://v2.cn.vuejs.org/v2/api/#filters) / [Vue.filter()](https://v2.cn.vuejs.org/v2/api/#Vue-filter) |
+| 实例层级 | [useShadowRoot()](https://vuejs.org/api/custom-elements.html#useshadowroot) | - | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) |
+| - | - | $parent | [$parent](https://v2.cn.vuejs.org/v2/api/#vm-parent) |
+| - | - | - | [$children](https://v2.cn.vuejs.org/v2/api/#vm-children) |
 
 ## 响应式
 
