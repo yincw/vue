@@ -2,18 +2,18 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) | [`data`](https://vuejs.org/api/options-state.html#data) | [`data`](https://v2.cn.vuejs.org/v2/api/#data) |
-| - | - | [$data](https://vuejs.org/api/component-instance.html#data) | [$data](https://v2.cn.vuejs.org/v2/api/#vm-data) |
-| 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) | [`computed`](https://vuejs.org/api/options-state.html#computed) | [`computed`](https://v2.cn.vuejs.org/v2/api/#computed) |
-| 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) | [`watch`](https://vuejs.org/api/options-state.html#watch)  | [`watch`](https://v2.cn.vuejs.org/v2/api/#watch) |
-| - | - | [$watch()](https://vuejs.org/api/component-instance.html#watch) | [$watch()](https://v2.cn.vuejs.org/v2/api/#vm-watch) |
-| - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) | - | - |
-| - | [watchPostEffect()](https://vuejs.org/api/reactivity-core#watchposteffect) | - | - |
-| - | [watchSyncEffect()](https://vuejs.org/api/reactivity-core#watchsynceffect) | - | - |
-| - | [onWatcherCleanup()](https://vuejs.org/api/reactivity-core.html#onwatchercleanup) | - | - |
-| - | [effectScope()](https://vuejs.org/api/reactivity-advanced.html#effectscope) | - | - |
-| - | [getCurrentScope()](https://vuejs.org/api/reactivity-advanced.html#getcurrentscope) | - | - |
-| - | [onScopeDispose()](https://vuejs.org/api/reactivity-advanced.html#onscopedispose) | - | - |
+| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) v3.0 | [`data`](https://vuejs.org/api/options-state.html#data) v3.0 | [`data`](https://v2.cn.vuejs.org/v2/api/#data) v2.0 |
+| - | - | [$data](https://vuejs.org/api/component-instance.html#data) v3.0 | [$data](https://v2.cn.vuejs.org/v2/api/#vm-data) v2.0 |
+| 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) v3.0 | [`computed`](https://vuejs.org/api/options-state.html#computed) v3.0 | [`computed`](https://v2.cn.vuejs.org/v2/api/#computed) v2.0 |
+| 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) v3.0 | [`watch`](https://vuejs.org/api/options-state.html#watch) v3.0 | [`watch`](https://v2.cn.vuejs.org/v2/api/#watch) v2.0 |
+| - | - | [$watch()](https://vuejs.org/api/component-instance.html#watch) v3.0 | [$watch()](https://v2.cn.vuejs.org/v2/api/#vm-watch) v2.0 |
+| - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) v3.0 | - | - |
+| - | [watchPostEffect()](https://vuejs.org/api/reactivity-core#watchposteffect) v3.0 | - | - |
+| - | [watchSyncEffect()](https://vuejs.org/api/reactivity-core#watchsynceffect) v3.0 | - | - |
+| - | [onWatcherCleanup()](https://vuejs.org/api/reactivity-core.html#onwatchercleanup) v3.5 | - | - |
+| - | [effectScope()](https://vuejs.org/api/reactivity-advanced.html#effectscope) v3.0 | - | - |
+| - | [getCurrentScope()](https://vuejs.org/api/reactivity-advanced.html#getcurrentscope) v3.0 | - | - |
+| - | [onScopeDispose()](https://vuejs.org/api/reactivity-advanced.html#onscopedispose) v3.0 | - | - |
 
 ## 状态
 

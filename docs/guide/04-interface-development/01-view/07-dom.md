@@ -2,16 +2,16 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| DOM 挂载 | - | - | [`el`](https://v2.cn.vuejs.org/v2/api/#el) |
-| DOM 实例 | - | [$el](https://vuejs.org/api/component-instance.html#el) | [$el](https://v2.cn.vuejs.org/v2/api/#vm-el) |
-| - | - | [$root](https://vuejs.org/api/component-instance.html#root) | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) |
-| - | - | [$parent](https://vuejs.org/api/component-instance.html#parent) | [$parent](https://v2.cn.vuejs.org/v2/api/#vm-parent) |
-| - | - | - | [$children](https://v2.cn.vuejs.org/v2/api/#vm-children) |
-| 模板引用 | - | [ref](https://vuejs.org/api/built-in-special-attributes.html#ref) | [ref](https://v2.cn.vuejs.org/v2/api/#ref) |
-| - | [useTemplateRef()](https://vuejs.org/api/composition-api-helpers.html#usetemplateref) v3.5 | [$refs](https://vuejs.org/api/component-instance.html#refs) | [$refs](https://v2.cn.vuejs.org/v2/api/#vm-refs) |
-| 强制 DOM 更新 | - | [$forceUpdate()](https://vuejs.org/api/component-instance.html#forceupdate) | [$forceUpdate()](https://v2.cn.vuejs.org/v2/api/#vm-forceUpdate) |
-| 立即获取 DOM | [nextTick()](https://vuejs.org/api/general.html#nexttick) | [$nextTick()](https://vuejs.org/api/component-instance.html#nexttick) | [Vue.nextTick()](https://v2.cn.vuejs.org/v2/api/#Vue-nextTick) / [$nextTick()](https://v2.cn.vuejs.org/v2/api/#vm-nextTick) |
-| 公开实例属性 | [defineExpose()](https://vuejs.org/api/sfc-script-setup.html#defineexpose) | [`expose`](https://vuejs.org/api/options-state.html#expose) | - |
+| DOM 挂载 | - | - | [`el`](https://v2.cn.vuejs.org/v2/api/#el) v2.0 |
+| DOM 实例 | - | [$el](https://vuejs.org/api/component-instance.html#el) v3.0 | [$el](https://v2.cn.vuejs.org/v2/api/#vm-el) v2.0 |
+| - | - | [$root](https://vuejs.org/api/component-instance.html#root) v3.0 | [$root](https://v2.cn.vuejs.org/v2/api/#vm-root) v2.0 |
+| - | - | [$parent](https://vuejs.org/api/component-instance.html#parent) v3.0 | [$parent](https://v2.cn.vuejs.org/v2/api/#vm-parent) v2.0 |
+| - | - | - | [$children](https://v2.cn.vuejs.org/v2/api/#vm-children) v2.0 |
+| 模板引用 | - | [ref](https://vuejs.org/api/built-in-special-attributes.html#ref) v3.0 | [ref](https://v2.cn.vuejs.org/v2/api/#ref) v2.0 |
+| - | [useTemplateRef()](https://vuejs.org/api/composition-api-helpers.html#usetemplateref) v3.5 | [$refs](https://vuejs.org/api/component-instance.html#refs) v3.0 | [$refs](https://v2.cn.vuejs.org/v2/api/#vm-refs) v2.0 |
+| 强制 DOM 更新 | - | [$forceUpdate()](https://vuejs.org/api/component-instance.html#forceupdate) v3.0 | [$forceUpdate()](https://v2.cn.vuejs.org/v2/api/#vm-forceUpdate) v2.0 |
+| 立即获取 DOM | [nextTick()](https://vuejs.org/api/general.html#nexttick) v3.0 | [$nextTick()](https://vuejs.org/api/component-instance.html#nexttick) v3.0 | [Vue.nextTick()](https://v2.cn.vuejs.org/v2/api/#Vue-nextTick) / [$nextTick()](https://v2.cn.vuejs.org/v2/api/#vm-nextTick) v2.0 |
+| 公开实例属性 | [defineExpose()](https://vuejs.org/api/sfc-script-setup.html#defineexpose) v3.0 | [`expose`](https://vuejs.org/api/options-state.html#expose) v3.0 | - |
 
 ## DOM 挂载
 

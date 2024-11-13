@@ -2,15 +2,15 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 插槽绑定 | - | [v-slot](https://vuejs.org/api/built-in-directives.html#v-slot) | [v-slot](https://v2.cn.vuejs.org/v2/api/#v-slot) v2.6 |
-| 命名插槽 | - | 同上 | [~~slot~~](https://v2.cn.vuejs.org/v2/api/#slot-%E5%BA%9F%E5%BC%83) |
+| 插槽绑定 | - | [v-slot](https://vuejs.org/api/built-in-directives.html#v-slot) v3.0 | [v-slot](https://v2.cn.vuejs.org/v2/api/#v-slot) v2.6 |
+| 命名插槽 | - | 同上 | [~~slot~~](https://v2.cn.vuejs.org/v2/api/#slot-%E5%BA%9F%E5%BC%83) v2.0 |
 | 作用域插槽 | - | 同上 | [~~slot-scope~~](https://v2.cn.vuejs.org/v2/api/#slot-scope-%E5%BA%9F%E5%BC%83) v2.5 |
-| 作用域插槽 | - | 同上 | [~~scope~~](https://v2.cn.vuejs.org/v2/api/#scope-%E7%A7%BB%E9%99%A4) |
-| 插槽出口 | - | [`<slot>`](https://vuejs.org/api/built-in-special-elements.html#slot) / name | [`<slot>`](https://v2.cn.vuejs.org/v2/api/#slot) / name |
+| 作用域插槽 | - | 同上 | [~~scope~~](https://v2.cn.vuejs.org/v2/api/#scope-%E7%A7%BB%E9%99%A4) v2.0 |
+| 插槽出口 | - | [`<slot>`](https://vuejs.org/api/built-in-special-elements.html#slot) v3.0 | [`<slot>`](https://v2.cn.vuejs.org/v2/api/#slot) v2.0 |
 | 定义插槽 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [`slots`](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
-| 插槽实例 | [useSlots()](https://vuejs.org/api/sfc-script-setup.html#useslots-useattrs) | [$slots](https://vuejs.org/api/component-instance.html#slots) | [$slots](https://v2.cn.vuejs.org/v2/api/#vm-slots) |
+| 插槽实例 | [useSlots()](https://vuejs.org/api/sfc-script-setup.html#useslots-useattrs) v3.0 | [$slots](https://vuejs.org/api/component-instance.html#slots) v3.0 | [$slots](https://v2.cn.vuejs.org/v2/api/#vm-slots) v2.0 |
 | - | - | - | [~~$scopedSlots~~](https://v2.cn.vuejs.org/v2/api/#vm-scopedSlots) v2.1 |
-| 渲染位置 | - | [`<Teleport>`](https://vuejs.org/api/built-in-components.html#teleport) | - |
+| 渲染位置 | - | [`<Teleport>`](https://vuejs.org/api/built-in-components.html#teleport) v3.0 | - |
 
 ## 插槽内容和出口
 

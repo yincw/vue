@@ -2,19 +2,19 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 条件渲染 | - | [v-if](https://vuejs.org/api/built-in-directives.html#v-if) | [v-if](https://v2.cn.vuejs.org/v2/api/#v-if) |
-| - | - | [v-else-if](https://vuejs.org/api/built-in-directives.html#v-else-if) | [v-else-if](https://v2.cn.vuejs.org/v2/api/#v-else-if) |
-| - | - | [v-else](https://vuejs.org/api/built-in-directives.html#v-else) | [v-else](https://v2.cn.vuejs.org/v2/api/#v-else) |
-| 列表渲染 | - | [v-for](https://vuejs.org/api/built-in-directives.html#v-for) / [:key](https://vuejs.org/api/built-in-special-attributes.html#key) | [v-for](https://v2.cn.vuejs.org/v2/api/#v-for) / [:key](https://v2.cn.vuejs.org/v2/api/#key) |
-| 显示隐藏 | - | [v-show](https://vuejs.org/api/built-in-directives.html#v-show) | [v-show](https://v2.cn.vuejs.org/v2/api/#v-show) |
-| 文本渲染 | - | [v-text](https://vuejs.org/api/built-in-directives.html#v-text) | [v-text](https://v2.cn.vuejs.org/v2/api/#v-text) |
-| HTML渲染 | - | [v-html](https://vuejs.org/api/built-in-directives.html#v-html) | [v-html](https://v2.cn.vuejs.org/v2/api/#v-html) |
-| 跳过编译 | - | [v-pre](https://vuejs.org/api/built-in-directives.html#v-pre) | [v-pre](https://v2.cn.vuejs.org/v2/api/#v-pre) |
-| 隐藏未编译插值 | - | [v-cloak](https://vuejs.org/api/built-in-directives.html#v-cloak) | [v-cloak](https://v2.cn.vuejs.org/v2/api/#v-cloak) |
-| 渲染一次 | - | [v-once](https://vuejs.org/api/built-in-directives.html#v-once) | [v-once](https://v2.cn.vuejs.org/v2/api/#v-once) |
-| 缓存模板 | - | [v-memo](https://vuejs.org/api/built-in-directives.html#v-memo) | - |
-| 注册指令 | - | [`directives`](https://vuejs.org/api/options-misc.html#directives) | [`directives`](https://v2.cn.vuejs.org/v2/api/#directives) |
-| - | [app.directive()](https://vuejs.org/api/application.html#app-directive) | - | [Vue.directive()](https://v2.cn.vuejs.org/v2/api/#Vue-directive) |
+| 条件渲染 | - | [v-if](https://vuejs.org/api/built-in-directives.html#v-if) v3.0 | [v-if](https://v2.cn.vuejs.org/v2/api/#v-if) v2.0 |
+| - | - | [v-else-if](https://vuejs.org/api/built-in-directives.html#v-else-if) v3.0 | [v-else-if](https://v2.cn.vuejs.org/v2/api/#v-else-if) v2.0 |
+| - | - | [v-else](https://vuejs.org/api/built-in-directives.html#v-else) v3.0 | [v-else](https://v2.cn.vuejs.org/v2/api/#v-else) v2.0 |
+| 列表渲染 | - | [v-for](https://vuejs.org/api/built-in-directives.html#v-for) v3.0 / [:key](https://vuejs.org/api/built-in-special-attributes.html#key) v3.0 | [v-for](https://v2.cn.vuejs.org/v2/api/#v-for) v2.0 / [:key](https://v2.cn.vuejs.org/v2/api/#key) v2.0 |
+| 显示隐藏 | - | [v-show](https://vuejs.org/api/built-in-directives.html#v-show) v3.0 | [v-show](https://v2.cn.vuejs.org/v2/api/#v-show) v2.0 |
+| 文本渲染 | - | [v-text](https://vuejs.org/api/built-in-directives.html#v-text) v3.0 | [v-text](https://v2.cn.vuejs.org/v2/api/#v-text) v2.0 |
+| HTML渲染 | - | [v-html](https://vuejs.org/api/built-in-directives.html#v-html) v3.0 | [v-html](https://v2.cn.vuejs.org/v2/api/#v-html) v2.0 |
+| 跳过编译 | - | [v-pre](https://vuejs.org/api/built-in-directives.html#v-pre) v3.0 | [v-pre](https://v2.cn.vuejs.org/v2/api/#v-pre) v2.0 |
+| 隐藏未编译插值 | - | [v-cloak](https://vuejs.org/api/built-in-directives.html#v-cloak) v3.0 | [v-cloak](https://v2.cn.vuejs.org/v2/api/#v-cloak) v2.0 |
+| 渲染一次 | - | [v-once](https://vuejs.org/api/built-in-directives.html#v-once) v3.0 | [v-once](https://v2.cn.vuejs.org/v2/api/#v-once) v2.0 |
+| 缓存模板 | - | [v-memo](https://vuejs.org/api/built-in-directives.html#v-memo) v3.2 | - |
+| 注册指令 | - | [`directives`](https://vuejs.org/api/options-misc.html#directives) v3.0 | [`directives`](https://v2.cn.vuejs.org/v2/api/#directives) v2.0 |
+| - | [app.directive()](https://vuejs.org/api/application.html#app-directive) v3.0 | - | [Vue.directive()](https://v2.cn.vuejs.org/v2/api/#Vue-directive) v2.0 |
 
 ## 条件渲染
 

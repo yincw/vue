@@ -2,8 +2,8 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 双向绑定 | - | [v-model](https://vuejs.org/api/built-in-directives.html#v-model) | [v-model](https://v2.cn.vuejs.org/v2/api/#v-model) |
-| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel)| [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) | [`model`](https://v2.cn.vuejs.org/v2/api/#model) |
+| 双向绑定 | - | [v-model](https://vuejs.org/api/built-in-directives.html#v-model) v3.0 | [v-model](https://v2.cn.vuejs.org/v2/api/#v-model) v2.0 |
+| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel) v3.4 | [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) v3.4 | [`model`](https://v2.cn.vuejs.org/v2/api/#model) v2.2 |
 
 ## 双向绑定
 
