@@ -153,8 +153,8 @@ export default defineConfig({
         // { text: '主页', link: '/' },
 
         { text: '教程', link: '/guide/00-intro/' },
+        { text: 'API 参考', link: '/api/' },
         { text: '组件库', link: '/components/' },
-        { text: 'API', link: '/api/' },
         { text: '场景问题', link: '/faq/' },
 
         // { text: '文档页', link: '/markdown/markdown' },

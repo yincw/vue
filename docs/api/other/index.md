@@ -1,24 +1,11 @@
 # 其他
 
-- React API
 - 通用函数工具集 API
   - html2canvas
   - crypto-js
-  - bcryptjs
+    - bcryptjs
   - moment
-  - day.js
-  - date-fns
-  - xlsx
-  - react-viewer 图片预览
-  - viewerjs 文档预览
-- BOM/Web API
-- H5 API
-- 小程序 API
-  - Taro
-- APP API
-  - Expo
-  - Flutter
-- Desktop API
-  - Electron
+    - day.js
+    - date-fns
 
 - https://tsejx.github.io/javascript-guidebook/browser-object-model

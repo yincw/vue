@@ -185,6 +185,8 @@
 
 ## 响应式
 
+| 分类 | Composition API（Vue3） - Proxy | Options API（Vue2）- Object.defineProperty |
+| :--- | :--- | :--- |
 | 响应式对象 | - | [Vue.observable()](https://v2.cn.vuejs.org/v2/api/#Vue-observable) v2.6 |
 | 添加属性 | - | [Vue.set()](https://v2.cn.vuejs.org/v2/api/#Vue-set) v2.0 |
 | `\-` | - | [$set()](https://v2.cn.vuejs.org/v2/api/#vm-set) v2.0 |
