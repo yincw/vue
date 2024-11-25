@@ -2,11 +2,29 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3/2）
 | :--- | :--- | :--- |
-| 声明属性及类型 | [defineProps()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) v3.0 | [`props`](https://v2.cn.vuejs.org/v2/api/#props) v2.0 | 
+| 声明 | [defineProps()](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) v3.0 | [`props`](https://v2.cn.vuejs.org/v2/api/#props) v2.0 | 
 | 属性默认值 | [withDefaults()](https://vuejs.org/api/sfc-script-setup.html#default-props-values-when-using-type-declaration) v3.0 | 同上 | 
-| 属性透传 | [defineOptions()](https://vuejs.org/api/sfc-script-setup.html#defineoptions) v3.3 | [`inheritAttrs`](https://v2.cn.vuejs.org/v2/api/#inheritAttrs) v2.4 | 
-| 属性获取 | [useAttrs()](https://vuejs.org/api/composition-api-helpers.html#useattrs) v3.0 | [$attrs](https://v2.cn.vuejs.org/v2/api/#vm-attrs) v2.4 | 
+| 读取 | [useAttrs()](https://vuejs.org/api/composition-api-helpers.html#useattrs) v3.0 | [$attrs](https://v2.cn.vuejs.org/v2/api/#vm-attrs) v2.4 | 
 | - | [var props](https://vuejs.org/api/sfc-script-setup.html#defineprops-defineemits) v3.0 | [$props](https://v2.cn.vuejs.org/v2/api/#vm-props) v2.2 | 
+| 绑定 | [v-bind](https://vuejs.org/api/built-in-directives.html#v-bind) v3.0 | [v-bind](https://v2.cn.vuejs.org/v2/api/#v-bind) v2.0 | 
+| 透传 | [defineOptions()](https://vuejs.org/api/sfc-script-setup.html#defineoptions) v3.3 | [`inheritAttrs`](https://v2.cn.vuejs.org/v2/api/#inheritAttrs) v2.4 | 
+| - | [app.config.globalProperties](https://vuejs.org/api/application.html#app-config-globalproperties) v3.0 | Vue.prototype v2.0 | 
+| - | [app.config.optionMergeStrategies](https://vuejs.org/api/application.html#app-config-optionmergestrategies) v3.0 | [Vue.config.optionMergeStrategies](https://v2.cn.vuejs.org/v2/api/#optionMergeStrategies) v2.0 | 
+| - | [$options](https://vuejs.org/api/component-instance.html#options) v3.0 | [$options](https://v2.cn.vuejs.org/v2/api/#vm-options) v2.0 | 
+| Children 属性 | - | [$children](https://v2.cn.vuejs.org/v2/api/#vm-children) v2.0 | 
+
+## 大纲
+
+- 属性
+  - 声明
+    - 默认值
+    - 类型及校验
+  - 读取
+  - 绑定
+    - 属性修饰符
+  - 透传
+    - 多根节点属性透传
+  - Children 属性
 
 ## 属性声明
 
@@ -72,81 +90,7 @@ export default {
 
 :::
 
-## 属性透传（继承）
-
-::: code-group
-
-```vue [Vue3]
-<script setup lang="ts">
-defineOptions({
-  // 属性透传（继承）
-  inheritAttrs: false // 默认为 true，禁用透传可传入 false
-})
-</script>
-
-<template>
-  <!-- 禁用透传将不传递 list- inherit -->
-  <!-- <div class="list list-inherit"> -->
-  <div class="list">
-  </div>
-</template>
-```
-
-```vue [Vue2]
-<script lang="ts">
-export default {
-  // 属性透传（继承）
-  inheritAttrs: false // 默认为 true，禁用透传可传入 false
-}
-</script>
-
-<template>
-  <!-- 禁用透传将不传递 list- inherit -->
-  <!-- <div class="list list-inherit"> -->
-  <div class="list">
-  </div>
-</template>
-```
-
-:::
-
-### 多根节点属性透传
-
-和单根节点组件不同，有着多个根节点的组件没有自动 attribute 透传行为。但可以手动绑定。
-
-::: code-group
-
-```vue [Vue3]
-<script setup lang="ts">
-defineOptions({
-  // 属性透传（继承）
-  inheritAttrs: false // 多根节点属性透传默认关闭
-})
-</script>
-
-<template>
-  <div>list1</div>
-  <div class="list" v-bind="$attrs">list2</div> // [!code focus]
-</template>
-```
-
-```vue [Vue2]
-<script lang="ts">
-export default {
-  // 属性透传（继承）
-  inheritAttrs: false, // 多根节点属性透传默认关闭
-}
-</script>
-
-<template>
-  <div>list1</div>
-  <div class="list" v-bind="$attrs">list2</div> // [!code focus]
-</template>
-```
-
-:::
-
-## 读取属性值
+## 属性读取
 
 ::: code-group
 
@@ -225,8 +169,91 @@ export default {
 
 - v-bind/:
 
-## 属性修饰符
+### 属性修饰符
 
 - .prop
 - .camel
 - .sync
+
+## 属性透传（继承）
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+defineOptions({
+  // 属性透传（继承）
+  inheritAttrs: false // 默认为 true，禁用透传可传入 false
+})
+</script>
+
+<template>
+  <!-- 禁用透传将不传递 list- inherit -->
+  <!-- <div class="list list-inherit"> -->
+  <div class="list">
+  </div>
+</template>
+```
+
+```vue [Vue2]
+<script lang="ts">
+export default {
+  // 属性透传（继承）
+  inheritAttrs: false // 默认为 true，禁用透传可传入 false
+}
+</script>
+
+<template>
+  <!-- 禁用透传将不传递 list- inherit -->
+  <!-- <div class="list list-inherit"> -->
+  <div class="list">
+  </div>
+</template>
+```
+
+:::
+
+### 多根节点属性透传
+
+和单根节点组件不同，有着多个根节点的组件没有自动 attribute 透传行为。但可以手动绑定。
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+defineOptions({
+  // 属性透传（继承）
+  inheritAttrs: false // 多根节点属性透传默认关闭
+})
+</script>
+
+<template>
+  <div>list1</div>
+  <div class="list" v-bind="$attrs">list2</div> // [!code focus]
+</template>
+```
+
+```vue [Vue2]
+<script lang="ts">
+export default {
+  // 属性透传（继承）
+  inheritAttrs: false, // 多根节点属性透传默认关闭
+}
+</script>
+
+<template>
+  <div>list1</div>
+  <div class="list" v-bind="$attrs">list2</div> // [!code focus]
+</template>
+```
+
+:::
+
+### Options 属性
+
+- optionMergeStrategies
+- $options
+
+## Children 属性
+
+- $children

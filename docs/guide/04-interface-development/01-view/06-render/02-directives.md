@@ -16,6 +16,24 @@
 | 注册指令 | - | [`directives`](https://vuejs.org/api/options-misc.html#directives) v3.0 | [`directives`](https://v2.cn.vuejs.org/v2/api/#directives) v2.0 |
 | - | [app.directive()](https://vuejs.org/api/application.html#app-directive) v3.0 | - | [Vue.directive()](https://v2.cn.vuejs.org/v2/api/#Vue-directive) v2.0 |
 
+## 大纲
+
+- 指令
+  - 条件渲染
+  - 列表渲染
+  - 显示隐藏
+  - 文本渲染
+  - HTML 渲染
+  - 其他
+    - 跳过编译
+    - 隐藏未编译的插值
+    - 只渲染一次
+    - 缓存模板
+    - 其他
+      - 自定义指令
+      - 指令参数及修饰符
+      - 注册指令
+
 ## 条件渲染
 
 根据表达式之真假值来有条件的渲染元素。在切换时元素及它的数据绑定/组件被销毁并重建。

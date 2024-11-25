@@ -2,15 +2,23 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 插槽绑定 | - | [v-slot](https://vuejs.org/api/built-in-directives.html#v-slot) v3.0 | [v-slot](https://v2.cn.vuejs.org/v2/api/#v-slot) v2.6 |
+| 出口 | - | [`<slot>`](https://vuejs.org/api/built-in-special-elements.html#slot) v3.0 | [`<slot>`](https://v2.cn.vuejs.org/v2/api/#slot) v2.0 |
+| 声明 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [`slots`](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
 | 命名插槽 | - | 同上 | [~~slot~~](https://v2.cn.vuejs.org/v2/api/#slot-%E5%BA%9F%E5%BC%83) v2.0 |
 | 作用域插槽 | - | 同上 | [~~slot-scope~~](https://v2.cn.vuejs.org/v2/api/#slot-scope-%E5%BA%9F%E5%BC%83) v2.5 |
-| 作用域插槽 | - | 同上 | [~~scope~~](https://v2.cn.vuejs.org/v2/api/#scope-%E7%A7%BB%E9%99%A4) v2.0 |
-| 插槽出口 | - | [`<slot>`](https://vuejs.org/api/built-in-special-elements.html#slot) v3.0 | [`<slot>`](https://v2.cn.vuejs.org/v2/api/#slot) v2.0 |
-| 定义插槽 | [defineSlots()](https://vuejs.org/api/sfc-script-setup.html#defineslots) v3.3  | [`slots`](https://vuejs.org/api/options-rendering.html#slots) v3.3 | - |
-| 插槽实例 | [useSlots()](https://vuejs.org/api/sfc-script-setup.html#useslots-useattrs) v3.0 | [$slots](https://vuejs.org/api/component-instance.html#slots) v3.0 | [$slots](https://v2.cn.vuejs.org/v2/api/#vm-slots) v2.0 |
+| - | - | 同上 | [~~scope~~](https://v2.cn.vuejs.org/v2/api/#scope-%E7%A7%BB%E9%99%A4) v2.0 |
+| 读取 | [useSlots()](https://vuejs.org/api/sfc-script-setup.html#useslots-useattrs) v3.0 | [$slots](https://vuejs.org/api/component-instance.html#slots) v3.0 | [$slots](https://v2.cn.vuejs.org/v2/api/#vm-slots) v2.0 |
 | - | - | - | [~~$scopedSlots~~](https://v2.cn.vuejs.org/v2/api/#vm-scopedSlots) v2.1 |
-| 渲染位置 | - | [`<Teleport>`](https://vuejs.org/api/built-in-components.html#teleport) v3.0 | - |
+| 绑定 | - | [v-slot](https://vuejs.org/api/built-in-directives.html#v-slot) v3.0 | [v-slot](https://v2.cn.vuejs.org/v2/api/#v-slot) v2.6 |
+
+## 大纲
+
+- 插槽
+  - 内容和出口
+  - 声明
+  - 读取
+  - 绑定
+- Render Props
 
 ## 插槽内容和出口
 
@@ -29,7 +37,24 @@
 
 ![Image](/slots.png)
 
-## 定义插槽类型
+### 默认插槽及值
+
+在某些情况下，为插槽指定回退（默认）内容很有用，仅在未提供任何内容时呈现。
+
+```vue
+<template>
+  <SubmitButton />
+
+  <!-- SubmitButton -->
+  <button type="submit">
+    <slot>
+      Submit <!-- fallback content -->
+    </slot>
+  </button>
+</template>
+```
+
+## 插槽声明
 
 ### `defineSlots()`
 
@@ -83,24 +108,32 @@ defineComponent({
 })
 ```
 
-## 默认插槽及值
+## 插槽读取
 
-在某些情况下，为插槽指定回退（默认）内容很有用，仅在未提供任何内容时呈现。
+有时，希望根据是否存在插槽来渲染某些内容。可以将 `$slots` 数据与 `v-if` 结合起来实现这一点。
 
 ```vue
 <template>
-  <SubmitButton />
-
-  <!-- SubmitButton -->
-  <button type="submit">
-    <slot>
-      Submit <!-- fallback content -->
-    </slot>
-  </button>
+  <div class="card">
+    <div v-if="$slots.header" class="card-header">
+      <slot name="header" />
+    </div>
+    
+    <div v-if="$slots.default" class="card-content">
+      <slot />
+    </div>
+    
+    <div v-if="$slots.footer" class="card-footer">
+      <slot name="footer" />
+    </div>
+  </div>
 </template>
 ```
 
-## 命名插槽
+## 插槽绑定
+
+
+### 命名插槽
 
 有时，在单个组件中具有多个插槽出口很有用。对于这种情况，`<slot>` 元素有一个特殊属性 `name`。该属性可用于为不同的插槽分配唯一ID，以便确定应呈现内容的位置：
 
@@ -124,29 +157,7 @@ defineComponent({
 
 ![Image](/named-slots.png)
 
-## 条件插槽
-
-有时，希望根据是否存在插槽来渲染某些内容。可以将 `$slots` 数据与 `v-if` 结合起来实现这一点。
-
-```vue
-<template>
-  <div class="card">
-    <div v-if="$slots.header" class="card-header">
-      <slot name="header" />
-    </div>
-    
-    <div v-if="$slots.default" class="card-content">
-      <slot />
-    </div>
-    
-    <div v-if="$slots.footer" class="card-footer">
-      <slot name="footer" />
-    </div>
-  </div>
-</template>
-```
-
-## 动态插槽
+### 动态插槽
 
 动态指令参数也适用于 `v-slot`，允许定义动态插槽名称：
 
@@ -165,7 +176,7 @@ defineComponent({
 </template>
 ```
 
-## 作用域插槽
+### 作用域插槽
 
 插槽内容无权访问子组件中的 state。但是，某些情况下，如果插槽的内容可以使用父范围和子范围的数据，则可能会很有用。
 
@@ -194,71 +205,4 @@ defineComponent({
 
 ![Image](/scoped-slots.svg)
 
-## 传送 - Teleport
-
-`<Teleport>` 允许我们将组件模板的一部分“传送”到该组件的 DOM 层次结构之外的 DOM 节点中。
-
-### 传送位置
-
-试想一个场景：构建全屏模式的弹窗。理想状态下，我们希望 modal 的按钮和 modal 本身位于同一个组件中，因为它们都与 modal 的 open/close 状态有关。但这意味着模态框将于按钮一起呈现，深深浅套在应用程序的 DOM 层次结构中。`<Teleport>` 提供了一种干净的方法来解决这些问题，允许我们跳出嵌套的 DOM 结构。
-
-```vue
-<script>
-export default {
-  data() {
-    return {
-      open: false
-    }
-  }
-}
-</script>
-
-<template>
-  <button @click="open = true">Open Modal</button>
-
-  <Teleport to="body">
-    <div v-if="open" class="modal">
-      <p>Hello from the modal!</p>
-      <button @click="open = false">Close</button>
-    </div>
-  </Teleport>
-</template>
-
-<style scoped>
-.modal {
-  position: fixed;
-  z-index: 999;
-  top: 20%;
-  left: 50%;
-  width: 300px;
-  margin-left: -150px;
-}
-</style>
-```
-
-`<Teleport>` 的目标 `to` 需要 CSS 选择器字符串或实际的 DOM 节点。在这里，我们基本上是告诉 Vue “将这个模板片段传送到 body 标签”。
-
-### 禁用传送
-
-在某些情况下，我们可能希望有条件的禁用 `<Teleport>`。比如：我们可能希望在桌面设备将组件渲染为叠加层，但在移动设备上是内联的。可以通过 `<Teleport>` 的 `disabled` 属性实现。
-
-```vue
-<template>
-  <Teleport :disabled="isMobile">
-    ...
-  </Teleport>
-</template>
-```
-
-### 延迟传送
-
-在 Vue 3.5+ 中，可以使用 `defer` prop 来推迟 Teleport 的目标解析，直到应用程序的其他部分挂载完毕。这允许 Teleport 以 Vue 渲染的容器元素为目标，但在组件树的后面部分：
-
-```vue
-<template>
-  <Teleport defer to="#late-div">...</Teleport>
-
-  <!-- somewhere later in the template -->
-  <div id="late-div"></div>
-</template>
-```
+## Render Props

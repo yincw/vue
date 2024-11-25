@@ -2,9 +2,65 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 动态组件渲染 | - | [`<component>`](https://vuejs.org/api/built-in-special-elements.html#component) v3.0 | [`<component>`](https://v2.cn.vuejs.org/v2/guide/components.html#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6) v2.0 |
-| 异步组件渲染 | - | [defineAsyncComponent()](https://vuejs.org/api/general.html#defineasynccomponent) v3.0 | [import()](https://v2.cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6) v2.0/ES2020 |
+| 创建 | - | [SFC](https://vuejs.org/guide/scaling-up/sfc.html#why-sfc) v3.0 | [SFC](https://v2.cn.vuejs.org/v2/guide/single-file-components.html) v2.0 |
+| - | - | - | [functional](https://v2.cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6) v2.5 <br/> [`functional`](https://v2.cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6) v2.0 |
+| - | [defineComponent()](https://vuejs.org/api/general.html#definecomponent) v3.0 | - | [new Vue()](https://v2.cn.vuejs.org/v2/guide/instance.html) v2.0 <br/> [Vue.extend()](https://v2.cn.vuejs.org/v2/api/#Vue-extend) v2.0 |
+| 注册 | [app.component()](https://vuejs.org/api/application.html#app-component) v3.0 | - | [Vue.component()](https://v2.cn.vuejs.org/v2/api/#Vue-component) v2.0 <br/> [`components`](https://v2.cn.vuejs.org/v2/guide/components-registration.html#%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C) v2.0 | 
+| 懒加载 | [defineAsyncComponent()](https://vuejs.org/api/general.html#defineasynccomponent) v3.0 | - | [import()](https://v2.cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6) v2.0/ES2020 |
+| `\-加载状态` | [defineAsyncComponent()](https://vuejs.org/api/general.html#defineasynccomponent) v3.0 | - | [loading](https://v2.cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%A4%84%E7%90%86%E5%8A%A0%E8%BD%BD%E7%8A%B6%E6%80%81) v2.3 |
+| `\-回退方案` | [`<Suspense>`](https://vuejs.org/api/built-in-components.html#suspense) | - | - |
+| `\-动态组件` | [`<component>`](https://vuejs.org/api/built-in-special-elements.html#component) v3.0 | - | [`<component>`](https://v2.cn.vuejs.org/v2/api/#component) v2.0 |
+| 性能优化 | [`<KeepAlive>`](https://vuejs.org/api/built-in-components.html#keepalive) v3.0 | - | [`<keep-alive>`](https://v2.cn.vuejs.org/v2/api/#keep-alive) v2.0 |
+| `\-记忆渲染结果` | - | [v-memo](https://vuejs.org/api/built-in-directives.html#v-memo) v3.2 | - |
+| `\-渲染一次`| - | [v-once](https://vuejs.org/api/built-in-directives.html#v-once) v3.0 | [v-once](https://v2.cn.vuejs.org/v2/api/#v-once) v2.0 |
 
+## 大纲
+
+- 组件
+  - 创建
+    - SFC组件
+    - 函数式组件
+  - 注册
+    - 全局注册
+    - 局部注册
+  - 加载
+    - 懒加载组件
+      - 动态加载
+    - 回退方案（加载状态）
+    - 动态组件
+      - `<component>` / :is
+  - 性能优化
+    - 缓存不活动的组件实例
+      - `<KeepAlive>`
+      - `<keep-alive>`
+    - 记忆渲染结果
+      - v-memo
+      - v-once
+- 调试
+
+## 创建
+
+### SFC 组件
+
+### 函数式组件
+
+- functional
+
+无状态（没有响应式数据）、无实例（没有 `this` 上下文）。
+
+因为函数式组件只是函数，所以渲染开销也低很多。
+
+## 加载组件
+
+### 异步组件
+
+### 动态组件
+
+## 性能优化
+
+### 缓存不活动的组件实例
+
+### 记忆渲染结果
 
 ## 创建视图
 
@@ -143,19 +199,3 @@ import { RouterLink, RouterView } from 'vue-router'
 :::
 
 访问 `/` 即可查看页面（首页）内容。
-
-## 定义组件
-
-- [defineComponent()](https://vuejs.org/api/general.html#definecomponent)
-- Vue.extend()
-- defineComponent() 定义具有类型推理的 Vue 组件
-- defineAsyncComponent() 定义异步组件，该组件仅在渲染时延迟加载。
-
-## 问题
-
-- 组件写法
-  - 有状态组件
-    - Class
-    - 函数
-  - 无状态组件
-- 如何划分组件功能（数据+方法）？

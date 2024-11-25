@@ -4,8 +4,6 @@
 | :--- | :--- | :--- | :--- |
 | - | - | - | - |
 
-- `<KeepAlive>`
-- `<keep-alive>`
 - cookie
 - localStorage
 - sessionStorage

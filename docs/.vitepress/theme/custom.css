@@ -21,10 +21,10 @@
     :root { --vp-home-hero-image-filter: blur(68px); }
 }
 
-.image-bg {
+/* .image-bg { */
     /* transform-origin: center; */
     /* animation: rotate 4s linear infinite; */
-}
+/* } */
 
 /* @media (max-width: 768px) {
     .image-bg {
@@ -46,13 +46,13 @@
 } */
 
 @keyframes rotate {
-    from {
-      transform: rotate(0deg) translate(0, 0) scale(0.8);
-    }
-    to {
-      transform: rotate(360deg) translate(0, 0) scale(0.8);
-    }
+  from {
+    transform: rotate(0deg) translate(0, 0) scale(0.8);
   }
+  to {
+    transform: rotate(360deg) translate(0, 0) scale(0.8);
+  }
+}
 
 /* 搜索样式 */
 @media (min-width: 768px) {
@@ -90,7 +90,6 @@
 
 
 }
-
 /* 磨砂背景效果 */
 @media (min-width: 960px) {
     .VPNavBar.has-sidebar .content-body {
@@ -102,6 +101,28 @@
         -webkit-backdrop-filter: saturate(50%) blur(8px);
         backdrop-filter: saturate(50%) blur(8px);
         background: rgba(0,0,0,.7);
+    }
+
+    .VPNavBar.home {
+      -webkit-backdrop-filter: saturate(50%) blur(8px);
+      backdrop-filter: saturate(50%) blur(8px);
+      background: rgba(255,255,255,.7);
+    }
+    .VPNavBar.home.top {
+      -webkit-backdrop-filter: saturate(100%) blur(8px);
+      backdrop-filter: saturate(100%) blur(8px);
+      background: var(--vp-nav-bg-color);
+    }
+
+    .dark .VPNavBar.home {
+      -webkit-backdrop-filter: saturate(50%) blur(8px);
+      backdrop-filter: saturate(50%) blur(8px);
+      background: rgba(0,0,0,.7);
+    }
+    .dark .VPNavBar.home.top {
+      -webkit-backdrop-filter: saturate(100%) blur(8px);
+      backdrop-filter: saturate(100%) blur(8px);
+      background: var(--vp-nav-bg-color);
     }
 }
 

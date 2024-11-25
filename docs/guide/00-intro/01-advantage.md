@@ -10,10 +10,7 @@
   - 可观测性强
 - 企业级的渐进式
   - 优化机制丰富
-- 支持跨平台：一次编写，
-  - React：Web APP
-  - React Native：Android/iOS APP
-  - Next.js/Remix：全栈开发
+- 支持跨平台：
 - 生态成熟
   - 开发团队: Meta(Facebook)，世界500强企业，开放文化，创新能力强；背靠大树好乘凉
   - 开放：开源（GitHub），非个人 KPI 产物；技术发展及创新不绑定特定人或组织

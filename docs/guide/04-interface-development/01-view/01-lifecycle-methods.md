@@ -17,6 +17,13 @@
 | 错误捕获 | [onErrorCaptured()](https://vuejs.org/api/composition-api-lifecycle.html#onerrorcaptured) v3.0 | [errorCaptured()](https://vuejs.org/api/options-lifecycle.html#errorcaptured) v3.0 | [errorCaptured()](https://v2.cn.vuejs.org/v2/api/?#errorCaptured) v2.5 | 
 | SSR | [onServerPrefetch()](https://vuejs.org/api/composition-api-lifecycle.html#onserverprefetch) v3.0 | [serverPrefetch()](https://vuejs.org/api/options-lifecycle.html#serverprefetch) v3.0 | 无 | 
 
+## 大纲
+
+- 生命周期钩子函数
+  - 调用顺序
+    - 嵌套组件生命周期调用顺序
+- 生命周期图示
+
 ## 生命周期钩子函数
 
 ::: code-group
@@ -122,7 +129,7 @@ export default {
 
 :::
 
-## 调用顺序
+### 调用顺序
 
 嵌套组件生命周期钩子函数调用顺序：
 

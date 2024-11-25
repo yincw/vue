@@ -1,5 +1,33 @@
 # 组件样式
 
+## 大纲
+
+- 外联样式
+  - 预处理
+    - lang="less"
+  - 样式隔离
+    - scoped
+      - :deep()
+      - :slotted()
+      - :global()
+    - CSS Modules
+      - useCssModule()
+      - $style
+  - CSS 工具库
+    - Tailwind CSS
+- 行内样式
+  - 样式绑定
+    - v-bind()
+- 内联样式
+- CSS-in-JS
+  - styled-components
+- CSS 优化
+  - UnoCSS
+- CSS 特性
+  - CSS 动画
+  - CSS 主题
+  - CSS 响应式设计
+
 ## 预处理
 
 ```vue
@@ -11,7 +39,9 @@
 </style>
 ```
 
-## Scoped CSS
+## 样式隔离
+
+### Scoped CSS
 
 ```vue
 <style scoped>
@@ -25,7 +55,7 @@
 </template>
 ```
 
-### 深度选择器 :deep()
+#### 深度选择器 :deep()
 
 ```vue
 <style scoped>
@@ -35,7 +65,7 @@
 </style>
 ```
 
-### 插槽选择器 :slotted()
+#### 插槽选择器 :slotted()
 
 ```vue
 <style scoped>
@@ -45,7 +75,7 @@
 </style>
 ```
 
-### 全局选择器 :global()
+#### 全局选择器 :global()
 
 ```vue
 <style scoped>
@@ -55,9 +85,9 @@
 </style>
 ```
 
-## CSS Modules
+### CSS Modules
 
-### $style
+#### $style
 
 ```vue [Vue3]
 <template>
@@ -71,7 +101,7 @@
 </style>
 ```
 
-### useCssModule()
+#### useCssModule()
 
 ::: code-group
 
@@ -107,7 +137,9 @@ const classes = useCssModule()
 </style>
 ```
 
-## v-bind()
+## 样式绑定
+
+### v-bind()
 
 ::: code-group
 
@@ -164,8 +196,6 @@ export default {
 
 ## 参考
 
-- styled-components
-- Tailwind CSS
 - https://vuejs.org/api/sfc-spec.html#pre-processors
 - https://vuejs.org/api/sfc-css-features.html
 - https://cn.vitejs.dev/guide/features#css-pre-processors

@@ -1,11 +1,105 @@
-# 表单输入绑定
+# 表单输入
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
 | 双向绑定 | - | [v-model](https://vuejs.org/api/built-in-directives.html#v-model) v3.0 | [v-model](https://v2.cn.vuejs.org/v2/api/#v-model) v2.0 |
-| 定制绑定行为 | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel) v3.4 | [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) v3.4 | [`model`](https://v2.cn.vuejs.org/v2/api/#model) v2.2 |
+| - | [defineModel()](https://vuejs.org/api/sfc-script-setup.html#definemodel) v3.4 <br/> [useModel()](https://vuejs.org/api/composition-api-helpers.html#usemodel) v3.4 | - | [`model`](https://v2.cn.vuejs.org/v2/api/#model) v2.2 |
+
+## 大纲
+
+- 表单输入
+  - 表单控件
+    - 属性
+    - 事件
+  - 绑定
+    - 双向绑定
+    - 自定义绑定
+      - 参数
+      - 表单修饰符
+      - 多根节点双向绑定
+  - 体验优化
+    - 乐观的更新表单
+
+## 表单控件
+
+表单控件 | 说明
+---|---
+`<input>` | 输入类型：`text`、`search`、`number`、`password`、`hidden`、`email`、`tel`、`url`；选择类型：`radio`、`checkbox`、`file`、`color`、`month`、`week`、`date`、`time`、`datetime-local`、`datetime`；拖动类型：`range`；按钮类型：`button`、`submit`、`reset`、`image`
+`<select>` | 多选属性：`multiple`；分组标签：`optgroup`、分组名属性：`label`；选项标签：`option`
+`<textarea>` | 行属性：`rows`；列属性：`cols`
 
 ## 双向绑定
+
+`v-model` 可以自定义表单控件值属性及默认事件的行为。在表单控件或者组件上创建 **双向绑定**。
+
+`v-model` 在内部为不同的输入元素使用不用的属性并抛出不同的事件：
+
+- `input[text]` 和 `textarea` 元素使用 `value` 属性和 `input` 事件
+- `input[checkbox]` 和 `input[radio]` 使用 `checked` 属性和 `change` 事件
+- `select` 元素使用 `value` 属性和 `change` 事件
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+// 父级
+const title = ref('title');
+
+// 子级
+const model = defineModel()
+</script>
+
+<template>
+  <!-- 父级 -->
+   <CustomInput v-model="title" />
+  
+  <!-- 子级：CustomInput -->
+   <input tye="text" v-model="model" />
+   <!-- 类似于上面写法 -->
+   <input tye="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
+</template>
+```
+
+```vue [Vue2]
+<script lang="ts">
+export default {
+  // 父级
+  data() {
+    return {
+      title: 'title'
+    }
+  },
+
+  // 子级：CustomInput
+  props: ['modelValue'],
+  emits: ['update:modelValue']
+}
+</script>
+
+<template>
+  <!-- 父级 -->
+  <CustomInput v-model="title" />
+  
+  <!-- 子级：CustomInput -->
+  <input
+    type="text"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  />
+</template>
+```
+
+:::
+
+### 表单修饰符
+
+表单修饰符 | 说明
+---|---
+`.lazy` | 取代 `input` 监听 `change` 事件
+`.number` | 输入字符串转为有效的数字
+`.trim` | 输入首尾空格过滤
+
+### 自定义双向绑定
 
 如下示例所示：父级状态（count）和子级模型（defineModel 创建）通过 `v-model` 创建数据双向绑定。
 
@@ -151,9 +245,9 @@ export default {
 
 Vue2 方案：
 
-- [model](https://v2.cn.vuejs.org/v2/api/#model)
+- [`model`](https://v2.cn.vuejs.org/v2/api/#model)
 
-### 自定义双向绑定参数
+### 自定义绑定参数
 
 `v-model` 可以接受一个参数，利用这个特性可以在单个组件实例上创建多个绑定。
 
@@ -222,7 +316,7 @@ export default {
 
 :::
 
-### 自定义双向绑定修饰符
+### 自定义绑定修饰符
 
 ::: code-group
 
@@ -314,84 +408,7 @@ Vue2 方案：
 
 - [$listeners](https://v2.cn.vuejs.org/v2/api/#vm-listeners)
 
-## 表单输入绑定
-
-`v-model` 可以自定义表单控件值属性及默认事件的行为。在表单控件或者组件上创建双向绑定。
-
-`v-model` 在内部为不同的输入元素使用不用的属性并抛出不同的事件：
-
-- `input[text]` 和 `textarea` 元素使用 `value` 属性和 `input` 事件
-- `input[checkbox]` 和 `input[radio]` 使用 `checked` 属性和 `change` 事件
-- `select` 元素使用 `value` 属性和 `change` 事件
-
-::: code-group
-
-```vue [Vue3]
-<script setup lang="ts">
-// 父级
-const title = ref('title');
-
-// 子级
-const model = defineModel()
-</script>
-
-<template>
-  <!-- 父级 -->
-   <CustomInput v-model="title" />
-  
-  <!-- 子级：CustomInput -->
-   <input tye="text" v-model="model" />
-   <!-- 类似于上面写法 -->
-   <input tye="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
-</template>
-```
-
-```vue [Vue2]
-<script lang="ts">
-export default {
-  // 父级
-  data() {
-    return {
-      title: 'title'
-    }
-  },
-
-  // 子级：CustomInput
-  props: ['modelValue'],
-  emits: ['update:modelValue']
-}
-</script>
-
-<template>
-  <!-- 父级 -->
-  <CustomInput v-model="title" />
-  
-  <!-- 子级：CustomInput -->
-  <input
-    type="text"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
-</template>
-```
-
-:::
-
-## 原生表单控件
-
-表单控件 | 说明
----|---
-`<input>` | 输入类型：`text`、`search`、`number`、`password`、`hidden`、`email`、`tel`、`url`；选择类型：`radio`、`checkbox`、`file`、`color`、`month`、`week`、`date`、`time`、`datetime-local`、`datetime`；拖动类型：`range`；按钮类型：`button`、`submit`、`reset`、`image`
-`<select>` | 多选属性：`multiple`；分组标签：`optgroup`、分组名属性：`label`；选项标签：`option`
-`<textarea>` | 行属性：`rows`；列属性：`cols`
-
-## 表单（双向绑定）修饰符
-
-表单修饰符 | 说明
----|---
-`.lazy` | 取代 `input` 监听 `change` 事件
-`.number` | 输入字符串转为有效的数字
-`.trim` | 输入首尾空格过滤
+## 体验优化
 
 ## 参考
 

@@ -1,0 +1,21 @@
+# 组件通信
+
+- 父子组件通信
+  - 父->子
+    - props
+  - 子->父
+    - $emit()
+    - v-model
+- 兄弟组件通信
+  - 转换为：子->父->子
+    - props
+    - $emit()
+    - v-model
+  - 依赖注入/上下文
+    - provide
+    - inject
+- 夸多层级组件通信
+  - 依赖注入/上下文
+    - provide
+    - inject
+  - Vuex

@@ -2,9 +2,9 @@
 
 | 分类 | Composition API（Vue3）| Options API（Vue3）| Options API（Vue2）|
 | :--- | :--- | :--- | :--- |
-| 状态 | [ref()](https://vuejs.org/api/reactivity-core#ref) v3.0 | [`data`](https://vuejs.org/api/options-state.html#data) v3.0 | [`data`](https://v2.cn.vuejs.org/v2/api/#data) v2.0 |
-| - | - | [$data](https://vuejs.org/api/component-instance.html#data) v3.0 | [$data](https://v2.cn.vuejs.org/v2/api/#vm-data) v2.0 |
-| 计算 | [computed()](https://vuejs.org/api/reactivity-core#computed) v3.0 | [`computed`](https://vuejs.org/api/options-state.html#computed) v3.0 | [`computed`](https://v2.cn.vuejs.org/v2/api/#computed) v2.0 |
+| 声明 | [ref()](https://vuejs.org/api/reactivity-core#ref) v3.0 | [`data`](https://vuejs.org/api/options-state.html#data) v3.0 | [`data`](https://v2.cn.vuejs.org/v2/api/#data) v2.0 |
+| 读取 | - | [$data](https://vuejs.org/api/component-instance.html#data) v3.0 | [$data](https://v2.cn.vuejs.org/v2/api/#vm-data) v2.0 |
+| 更新 | [computed()](https://vuejs.org/api/reactivity-core#computed) v3.0 | [`computed`](https://vuejs.org/api/options-state.html#computed) v3.0 | [`computed`](https://v2.cn.vuejs.org/v2/api/#computed) v2.0 |
 | 监听 | [watch()](https://vuejs.org/api/reactivity-core#watch) v3.0 | [`watch`](https://vuejs.org/api/options-state.html#watch) v3.0 | [`watch`](https://v2.cn.vuejs.org/v2/api/#watch) v2.0 |
 | - | - | [$watch()](https://vuejs.org/api/component-instance.html#watch) v3.0 | [$watch()](https://v2.cn.vuejs.org/v2/api/#vm-watch) v2.0 |
 | - | [watchEffect()](https://vuejs.org/api/reactivity-core#watcheffect) v3.0 | - | - |
@@ -15,11 +15,30 @@
 | - | [getCurrentScope()](https://vuejs.org/api/reactivity-advanced.html#getcurrentscope) v3.0 | - | - |
 | - | [onScopeDispose()](https://vuejs.org/api/reactivity-advanced.html#onscopedispose) v3.0 | - | - |
 
-## 状态
+## 大纲
 
-状态值的更新是同步的，但状态值更新后的 DOM 渲染是异步的。
+- 状态
+  - 声明
+    - 初始值
+      - 默认值来源
+      - 初始化函数-避免重复创建初始状态
+  - 读取
+  - 更新
+    - 派生状态/计算
+    - 更新后立即获取
+    - 状态变更立即更新 DOM
+    - 更新状态中的对象和数组
+    - 性能优化
+      - 避免重复创建初始状态
+      - 使用 key 重置状态
+      - 存储前一次渲染的信息
+  - 监听
+    - 异步监听
+    - 同步监听
+    - 深度监听和立即执行
+    - 监听依赖自动收集
 
-### 声明状态
+## 状态声明
 
 - ref 响应式默认是深度展开的。避免深度转换，请使用 shallowRef
 
@@ -63,6 +82,62 @@ export default {
 ```
 
 :::
+
+## 状态读取
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 声明状态
+const count = ref(0)
+
+// 脚本读取状态值  // [!code focus:2]
+console.log(count.value)
+</script>
+
+<template>
+  <div>
+      <button type="button" @click="count--">-</button>
+      <!-- 模版读取状态值 --> // [!code focus:2]
+      {{ count }}
+      <button type="button" @click="count++">+</button>
+  </div>
+</template>
+```
+
+```vue [Vue2]
+<script lang="ts">
+export default {
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  mounted() {
+    // 脚本读取状态值  // [!code focus:2]
+    console.log(this.count)
+  }
+}
+</script>
+
+<template>
+  <div>
+      <button type="button" @click="count--">-</button>
+      <!-- 模版读取状态值 --> // [!code focus:2]
+      {{ count }}
+      <button type="button" @click="count++">+</button>
+  </div>
+</template>
+```
+
+:::
+
+## 状态更新
+
+状态值的更新是同步的，但状态值更新后的 DOM 渲染是异步的。
 
 ### 计算
 
@@ -119,201 +194,7 @@ export default {
 
 :::
 
-### 监听并更改状态值
-
-watch 函数在一段响应式状态发生变化时触发回调。比如：执行 “副作用” 来响应状态更改，更改 DOM 或根据异步操作的结果更改另一个状态。
-
-::: code-group
-
-```vue [Vue3]
-<script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-
-// 声明状态
-const count = ref(0)
-const total = ref(0)
-
-// 计算
-const newCount = computed(() => count.value * 2);
-
-// 监听状态值 // [!code focus:5]
-watch(count, (newVal, oldVal) => {
-  // 更改状态值
-  total.value = newVal
-})
-
-// 监听计算属性
-watch(newCount, (newVal, oldVal) => {
-})
-</script>
-
-<template>
-  <div>
-      <button type="button" @click="count--">-</button>
-      {{ count }}
-      <button type="button" @click="count++">+</button>
-      {{ newCount }}
-  </div>
-  <div>{{ total }}</div>
-</template>
-```
-
-```vue [Vue2]
-<script lang="ts">
-export default {
-  data() {
-    return {
-      count: 0,
-      total: 0
-    };
-  },
-  computed: {
-    newCount: function() {
-      return this.count * 2;
-    }
-  },
-  // 监听状态值 // [!code focus:7]
-  watch: { 
-    count: function(newVal, oldVal) {
-      // 更改状态值
-      this.total = newVal
-    },
-    newCount: function(newVal, oldVal) {
-    }
-  }
-}
-</script>
-
-<template>
-  <div>
-      <button type="button" @click="count--">-</button>
-      {{ count }}
-      <button type="button" @click="count++">+</button>
-      {{ newCount }}
-  </div>
-  <div>{{ total }}</div>
-</template>
-```
-
-:::
-
-#### 深度监听和立即执行
-
-::: code-group
-
-```vue [Vue3]
-<script setup lang="ts">
-import { ref, watch } from 'vue'
-
-// 声明状态
-const count = ref(0)
-const total = ref(0)
-
-// 监听状态值
-watch(count, (newVal, oldVal) => {
-  total.value = newVal
-}, {
-  deep: true, // 该回调会在任何被侦听的对象的 property 改变时被调用，不论其被嵌套多深  // [!code focus]
-  immediate: true // 该回调将会在侦听开始之后被立即调用
-})
-</script>
-
-<template>
-  <div>
-      <button type="button" @click="count--">-</button>
-      {{ count }}
-      <button type="button" @click="count++">+</button>
-  </div>
-  <div>{{ total }}</div>
-</template>
-```
-
-```vue [Vue2]
-<script lang="ts">
-export default {
-  data() {
-    return {
-      count: 0,
-      total: 0
-    };
-  },
-  watch: {
-    count: {
-      handler: function(newVal, oldVal) {
-        this.total = newVal
-      }, 
-      deep: true, // 该回调会在任何被侦听的对象的 property 改变时被调用，不论其被嵌套多深 // [!code focus]
-      immediate: true // 该回调将会在侦听开始之后被立即调用
-    }
-  }
-}
-</script>
-
-<template>
-  <div>
-      <button type="button" @click="count--">-</button>
-      {{ count }}
-      <button type="button" @click="count++">+</button>
-  </div>
-  <div>{{ total }}</div>
-</template>
-```
-
-:::
-
-### 读取状态值
-
-::: code-group
-
-```vue [Vue3]
-<script setup lang="ts">
-import { ref } from 'vue'
-
-// 声明状态
-const count = ref(0)
-
-// 脚本读取状态值  // [!code focus:2]
-console.log(count.value)
-</script>
-
-<template>
-  <div>
-      <button type="button" @click="count--">-</button>
-      <!-- 模版读取状态值 --> // [!code focus:2]
-      {{ count }}
-      <button type="button" @click="count++">+</button>
-  </div>
-</template>
-```
-
-```vue [Vue2]
-<script lang="ts">
-export default {
-  data() {
-    return {
-      count: 0,
-    };
-  },
-  mounted() {
-    // 脚本读取状态值  // [!code focus:2]
-    console.log(this.count)
-  }
-}
-</script>
-
-<template>
-  <div>
-      <button type="button" @click="count--">-</button>
-      <!-- 模版读取状态值 --> // [!code focus:2]
-      {{ count }}
-      <button type="button" @click="count++">+</button>
-  </div>
-</template>
-```
-
-:::
-
-## 状态变更立即更新 DOM
+### 状态变更立即更新 DOM
 
 状态更新后立即获取应用新状态后的 DOM 实例的值。
 
@@ -407,7 +288,149 @@ export default {
 
 :::
 
-## 自动收集监听依赖
+## 状态监听
+
+watch 函数在一段响应式状态发生变化时触发回调。比如：执行 “副作用” 来响应状态更改，更改 DOM 或根据异步操作的结果更改另一个状态。
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue'
+
+// 声明状态
+const count = ref(0)
+const total = ref(0)
+
+// 计算
+const newCount = computed(() => count.value * 2);
+
+// 监听状态值 // [!code focus:5]
+watch(count, (newVal, oldVal) => {
+  // 更改状态值
+  total.value = newVal
+})
+
+// 监听计算属性
+watch(newCount, (newVal, oldVal) => {
+})
+</script>
+
+<template>
+  <div>
+      <button type="button" @click="count--">-</button>
+      {{ count }}
+      <button type="button" @click="count++">+</button>
+      {{ newCount }}
+  </div>
+  <div>{{ total }}</div>
+</template>
+```
+
+```vue [Vue2]
+<script lang="ts">
+export default {
+  data() {
+    return {
+      count: 0,
+      total: 0
+    };
+  },
+  computed: {
+    newCount: function() {
+      return this.count * 2;
+    }
+  },
+  // 监听状态值 // [!code focus:7]
+  watch: { 
+    count: function(newVal, oldVal) {
+      // 更改状态值
+      this.total = newVal
+    },
+    newCount: function(newVal, oldVal) {
+    }
+  }
+}
+</script>
+
+<template>
+  <div>
+      <button type="button" @click="count--">-</button>
+      {{ count }}
+      <button type="button" @click="count++">+</button>
+      {{ newCount }}
+  </div>
+  <div>{{ total }}</div>
+</template>
+```
+
+:::
+
+### 深度监听和立即执行
+
+::: code-group
+
+```vue [Vue3]
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+
+// 声明状态
+const count = ref(0)
+const total = ref(0)
+
+// 监听状态值
+watch(count, (newVal, oldVal) => {
+  total.value = newVal
+}, {
+  deep: true, // 该回调会在任何被侦听的对象的 property 改变时被调用，不论其被嵌套多深  // [!code focus]
+  immediate: true // 该回调将会在侦听开始之后被立即调用
+})
+</script>
+
+<template>
+  <div>
+      <button type="button" @click="count--">-</button>
+      {{ count }}
+      <button type="button" @click="count++">+</button>
+  </div>
+  <div>{{ total }}</div>
+</template>
+```
+
+```vue [Vue2]
+<script lang="ts">
+export default {
+  data() {
+    return {
+      count: 0,
+      total: 0
+    };
+  },
+  watch: {
+    count: {
+      handler: function(newVal, oldVal) {
+        this.total = newVal
+      }, 
+      deep: true, // 该回调会在任何被侦听的对象的 property 改变时被调用，不论其被嵌套多深 // [!code focus]
+      immediate: true // 该回调将会在侦听开始之后被立即调用
+    }
+  }
+}
+</script>
+
+<template>
+  <div>
+      <button type="button" @click="count--">-</button>
+      {{ count }}
+      <button type="button" @click="count++">+</button>
+  </div>
+  <div>{{ total }}</div>
+</template>
+```
+
+:::
+
+### 自动收集监听依赖
 
 - watchEffect：默认情况下，watcher 回调会进行批处理避免重复调用，在当前组件的 DOM 更新之前，调用 watcher 回调。这意味着，watcher 回调中访问当前组件的 DOM，DOM 将处于更新前的状态。
 - watchPostEffect：支持在当前组件的 DOM 更新之后，调用 watcher 回调。
@@ -457,8 +480,8 @@ watch 和 watchEffect 的共同点和区别：
       - watchEffect 默认会立即执行
       - watchEffect 在深度跟踪场景比 deep 更有效，因为它只会跟踪回调中使用的属性，而不是跟 deep 那样递归跟踪的所有属性
 
-## Options API 
+## 问题 
 
-> data 为什么不能用纯对象来定义？
+> Options API 中 data 为什么不能用纯对象来定义？
 
 因为组件可能被用来创建多个实例。如果 data 仍然是一个纯粹的对象，则所有的实例将共享引用同一个数据对象！通过提供 data 函数，每次创建一个新实例后，我们能够调用 data 函数，从而返回初始数据的一个全新副本数据对象。
